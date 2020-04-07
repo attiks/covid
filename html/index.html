@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Covid data Belgium</title>
+  <script src="./Chart.min.js"></script>
+  <style>
+    html {
+        font-family: sans-serif;
+        font-size: 62.5%;
+    }
+
+    body {
+        font-size: 2rem;
+        line-height: 1.4;
+    }
+
+    * {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    a,
+    a:visited {
+        color: inherit;
+    }
+
+    .totals {
+      font-size: 2rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;      
+    }
+
+    .total {
+      position: relative;
+      flex: 1;
+      min-height: 10rem;
+      border: solid 1px;
+      margin: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .total-in {
+      color: #990000;
+    }
+    .total-out {
+      color: #009900;
+    }
+
+    .last {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      color: #ffffff;
+      padding: 10px;
+    }
+
+    .total .last {
+      background-color: #333333;
+    }
+    .total-in .last {
+      background-color: #990000;
+    }
+    .total-out .last {
+      background-color: #009900;
+    }
+
+    .info p {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="totals">
+    <div class="total total-in">
+      <p>People In<br><span class='num'><span></p>
+      <span class='last'><span>
+    </div>
+    <div class="total total-out">
+      <p>People out<br><span class='num'><span></p>
+      <span class='last'><span>
+    </div>
+    <div class="total total-delta">
+      <p>People in hospital<br><span class='num'><span></p>
+      <span class='last'><span>
+    </div>
+    <div class="total total-deceased">
+      <p>People deceased<br><span class='num'><span></p>
+      <span class='last'><span>
+    </div>
+  </div>
+
+  <div class="info">
+    <p>From 2020-03-15 to <span class="end-date">2020-04-05</span>.</p>
+    <p>Data source: <a href="https://epistat.wiv-isp.be/Covid/">https://epistat.wiv-isp.be/Covid/</a></p>
+  </div>
+
+  <div id="chartContainer" style="height: 370px; width: 100%;">
+    <canvas id="canvas"></canvas>
+  </div>
+</body>
+
+<script>
+
+window.onload = function() {
+  function addData(data) {
+    var totalIn = 0;
+    var totalOut = 0;
+    var totalDelta = 0;
+    var totalDeceased = 0;    
+
+    var lastIn = 0;
+    var lastOut = 0;
+    var lastDeceased = 0;
+    var endDate = '2020-04-05';
+
+    var dataLabels = [];
+    var dataPointsIn = [];
+    var dataPointsOut = [];
+    var dataPointsDelta = [];
+    var dataPointsDeceased = [];
+
+    for (var row in data) {
+      dataLabels.push(row);
+
+      dataPointsIn.push({
+        x: new Date(data),
+        y: data[row].in
+      });
+
+      dataPointsOut.push({
+        x: new Date(data),
+        y: data[row].out
+      });
+
+      dataPointsDelta.push({
+        x: new Date(data),
+        y: data[row].delta + totalDelta
+      });
+
+      dataPointsDeceased.push({
+        x: new Date(data),
+        y: data[row].deceased + totalDeceased
+      });
+
+      lastIn = data[row].in;
+      lastOut = data[row].out;
+      lastDeceased = data[row].deceased;
+      endDate = row;
+
+      totalIn += data[row].in;
+      totalOut += data[row].out;
+      totalDelta += data[row].delta;
+      totalDeceased += data[row].deceased;
+    }
+
+    var barChartData = {
+      labels: dataLabels,
+      datasets: [
+        {
+          label: 'People In',
+          backgroundColor: '#990000',
+          borderColor: '#990000',
+          borderWidth: 1,
+          yAxisID: 'y-axis-1',
+          data: dataPointsIn
+        },
+        {
+          label: 'People out',
+          backgroundColor: '#009900',
+          borderColor: '#009900',
+          borderWidth: 1,
+          yAxisID: 'y-axis-1',
+          data: dataPointsOut
+        },
+        {
+          label: 'Delta',
+          type: 'line',
+          backgroundColor: '#333333',
+          borderColor: '#333333',
+          borderWidth: 1,
+          fill: false,
+          yAxisID: 'y-axis-2',
+          data: dataPointsDelta
+        },
+        {
+          label: 'Deceased',
+          type: 'line',
+          backgroundColor: '#000099',
+          borderColor: '#000099',
+          borderWidth: 1,
+          fill: false,
+          yAxisID: 'y-axis-3',
+          data: dataPointsDeceased
+        }
+      ]
+    };
+
+    var ctx = document.getElementById('canvas').getContext('2d');
+    const ticks = [10, 100, 1000, 5000];
+    window.myChart = new Chart(ctx, {
+      type: 'bar',
+      data: barChartData,
+      options: {
+        responsive: true,
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Covid In/Out'
+        },
+        scales: {
+          yAxes: [
+            {
+              type: 'linear',
+              beginAtZero: true,
+              display: true,
+              position: 'left',
+              id: 'y-axis-1',
+            },
+            {
+              type: 'logarithmic',
+              display: true,
+              position: 'right',
+              id: 'y-axis-2',
+              gridLines: {
+                drawOnChartArea: false
+              },
+              ticks: {
+                beginAtZero: true,
+                callback: function (value, index, values) {
+                  if (ticks.includes(value)){
+                    return Number(value.toString());
+                  }
+                }
+              },
+              afterBuildTicks: function(chart) {
+                chart.ticks.push(...ticks);
+              }
+            },
+            {
+              type: 'logarithmic',
+              display: true,
+              position: 'right',
+              id: 'y-axis-3',
+              gridLines: {
+                drawOnChartArea: false
+              },
+              ticks: {
+                beginAtZero: true,
+                callback: function (value, index, values) {
+                  if (ticks.includes(value)){
+                    return Number(value.toString());
+                  }
+                }
+              }
+            }
+          ],
+        }        
+      }
+    });
+
+    document.querySelector('.total-in .num').innerText = totalIn;
+    document.querySelector('.total-out .num').innerText = totalOut;
+    document.querySelector('.total-delta .num').innerText = totalIn - totalOut;
+    document.querySelector('.total-deceased .num').innerText = totalDeceased;
+
+    document.querySelector('.total-in .last').innerText = (lastIn > 0 ? '+' : '') + lastIn;
+    document.querySelector('.total-out .last').innerText = (lastOut > 0 ? '+' : '') + lastOut;
+    document.querySelector('.total-deceased .last').innerText = (lastDeceased > 0 ? '+' : '') + lastDeceased;
+    document.querySelector('.total-delta .last').innerText = ((lastIn - lastOut) > 0 ? '+' : '') + (lastIn - lastOut);
+
+    document.querySelector('.info .end-date').innerText = endDate;
+  }
+
+  fetch('./data.json')
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+
+      throw new Error('Unable to load data.');
+    })
+    .then(json => {
+      addData(json);
+    });
+}
+
+</script>

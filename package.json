@@ -1,0 +1,11 @@
+{
+  "name": "covid-belgium",
+  "version": "1.0.0",
+  "description": "Covid Belgium info",
+  "main": "index.html",
+  "scripts": {
+    "build": "./build.sh"
+  },
+  "author": "attiks",
+  "license": "ISC"
+}
