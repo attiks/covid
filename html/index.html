@@ -101,7 +101,7 @@
     <p>Data source: <a href="https://epistat.wiv-isp.be/Covid/">https://epistat.wiv-isp.be/Covid/</a></p>
   </div>
 
-  <div id="chartContainer" style="height: 370px; width: 100%;">
+  <div class="chart-container">
     <canvas id="canvas"></canvas>
   </div>
 </body>
@@ -202,7 +202,7 @@ window.onload = function() {
       ]
     };
 
-    var ctx = document.getElementById('canvas').getContext('2d');
+    var ctx = document.querySelector('.chart-container canvas').getContext('2d');
     const ticks = [10, 100, 1000, 5000];
     window.myChart = new Chart(ctx, {
       type: 'bar',
@@ -213,8 +213,7 @@ window.onload = function() {
           position: 'top',
         },
         title: {
-          display: true,
-          text: 'Covid In/Out'
+          display: false
         },
         scales: {
           yAxes: [
