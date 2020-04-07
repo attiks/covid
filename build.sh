@@ -2,7 +2,13 @@ curl https://epistat.sciensano.be/Data/COVID19BE_HOSP.json | jq 'reduce .[] as $
 
 curl https://epistat.sciensano.be/Data/COVID19BE_MORT.json | jq 'map(select(.DATE >= "2020-03-15")) | reduce .[] as $pair ({}; .[$pair.DATE].deceased += $pair.DEATHS)' > data_deceased.json
 
-jq -n 'reduce inputs as $i ({}; . * $i)' data_hospital.json data_deceased.json > data.json
+curl https://epistat.sciensano.be/Data/COVID19BE_CASES_AGESEX.json | jq 'map(select(.DATE >= "2020-03-15")) | reduce .[] as $pair ({}; .[$pair.DATE].infected += $pair.CASES)' > data_infected.json
+
+curl https://epistat.sciensano.be/Data/COVID19BE_tests.json | jq '."SASTableData+COVID19BE_TESTS" | map(select(.DATE >= "2020-03-15")) | reduce .[] as $pair ({}; .[$pair.DATE].tests += $pair.TESTS)' > data_tests.json
+
+jq -n 'reduce inputs as $i ({}; . * $i)' data_hospital.json data_deceased.json > data_1.json
+jq -n 'reduce inputs as $i ({}; . * $i)' data_1.json data_infected.json > data_2.json
+jq -n 'reduce inputs as $i ({}; . * $i)' data_2.json data_tests.json > data.json
 
 mv data.json html
-rm data_hospital.json data_deceased.json
+rm data_*.json

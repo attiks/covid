@@ -31,7 +31,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: center;      
+      justify-content: center;
     }
 
     .total {
@@ -94,6 +94,14 @@
       <p>People deceased<br><span class='num'><span></p>
       <span class='last'><span>
     </div>
+    <div class="total total-tests">
+      <p>People tested<br><span class='num'><span></p>
+      <span class='last'><span>
+    </div>
+    <div class="total total-infected">
+      <p>People infected<br><span class='num'><span></p>
+      <span class='last'><span>
+    </div>
   </div>
 
   <div class="info">
@@ -113,11 +121,16 @@ window.onload = function() {
     var totalIn = 0;
     var totalOut = 0;
     var totalDelta = 0;
-    var totalDeceased = 0;    
+    var totalDeceased = 0;
+    var totalTests = 0;
+    var totalInfected = 0;
 
     var lastIn = 0;
     var lastOut = 0;
     var lastDeceased = 0;
+    var lastTests = 0;
+    var lastInfected = 0;
+
     var endDate = '2020-04-05';
 
     var dataLabels = [];
@@ -125,6 +138,8 @@ window.onload = function() {
     var dataPointsOut = [];
     var dataPointsDelta = [];
     var dataPointsDeceased = [];
+    var dataPointsTests = [];
+    var dataPointsInfected = [];
 
     for (var row in data) {
       dataLabels.push(row);
@@ -149,15 +164,30 @@ window.onload = function() {
         y: data[row].deceased + totalDeceased
       });
 
+      dataPointsTests.push({
+        x: new Date(data),
+        y: data[row].tests + totalTests
+      });
+
+      dataPointsInfected.push({
+        x: new Date(data),
+        y: data[row].infected + totalInfected
+      });
+
       lastIn = data[row].in;
       lastOut = data[row].out;
       lastDeceased = data[row].deceased;
+      lastTests = data[row].tests;
+      lastInfected = data[row].infected;
+
       endDate = row;
 
       totalIn += data[row].in;
       totalOut += data[row].out;
       totalDelta += data[row].delta;
       totalDeceased += data[row].deceased;
+      totalTests += data[row].tests;
+      totalInfected += data[row].infected;
     }
 
     var barChartData = {
@@ -180,7 +210,7 @@ window.onload = function() {
           data: dataPointsOut
         },
         {
-          label: 'Delta',
+          label: 'Hospital',
           type: 'line',
           backgroundColor: '#333333',
           borderColor: '#333333',
@@ -196,14 +226,35 @@ window.onload = function() {
           borderColor: '#000099',
           borderWidth: 1,
           fill: false,
-          yAxisID: 'y-axis-3',
+          yAxisID: 'y-axis-2',
           data: dataPointsDeceased
+        },
+        {
+          label: 'Tested',
+          type: 'line',
+          backgroundColor: '#009999',
+          borderColor: '#009999',
+          borderWidth: 1,
+          fill: false,
+          yAxisID: 'y-axis-2',
+          data: dataPointsTests
+        },
+        {
+          label: 'Infected',
+          type: 'line',
+          backgroundColor: '#009999',
+          borderColor: '#009999',
+          borderWidth: 1,
+          fill: false,
+          yAxisID: 'y-axis-2',
+          data: dataPointsInfected
         }
       ]
     };
 
     var ctx = document.querySelector('.chart-container canvas').getContext('2d');
-    const ticks = [10, 100, 1000, 5000];
+    const ticks = [10, 100, 1000, 5000, 10000, 20000, 40000, 80000];
+
     window.myChart = new Chart(ctx, {
       type: 'bar',
       data: barChartData,
@@ -243,26 +294,9 @@ window.onload = function() {
               afterBuildTicks: function(chart) {
                 chart.ticks.push(...ticks);
               }
-            },
-            {
-              type: 'logarithmic',
-              display: true,
-              position: 'right',
-              id: 'y-axis-3',
-              gridLines: {
-                drawOnChartArea: false
-              },
-              ticks: {
-                beginAtZero: true,
-                callback: function (value, index, values) {
-                  if (ticks.includes(value)){
-                    return Number(value.toString());
-                  }
-                }
-              }
             }
           ],
-        }        
+        }
       }
     });
 
@@ -270,11 +304,15 @@ window.onload = function() {
     document.querySelector('.total-out .num').innerText = totalOut;
     document.querySelector('.total-delta .num').innerText = totalIn - totalOut;
     document.querySelector('.total-deceased .num').innerText = totalDeceased;
+    document.querySelector('.total-tests .num').innerText = totalTests;
+    document.querySelector('.total-infected .num').innerText = totalInfected;
 
     document.querySelector('.total-in .last').innerText = (lastIn > 0 ? '+' : '') + lastIn;
     document.querySelector('.total-out .last').innerText = (lastOut > 0 ? '+' : '') + lastOut;
-    document.querySelector('.total-deceased .last').innerText = (lastDeceased > 0 ? '+' : '') + lastDeceased;
     document.querySelector('.total-delta .last').innerText = ((lastIn - lastOut) > 0 ? '+' : '') + (lastIn - lastOut);
+    document.querySelector('.total-deceased .last').innerText = (lastDeceased > 0 ? '+' : '') + lastDeceased;
+    document.querySelector('.total-tests .last').innerText = (lastTests > 0 ? '+' : '') + lastTests;
+    document.querySelector('.total-infected .last').innerText = (lastInfected > 0 ? '+' : '') + lastInfected;
 
     document.querySelector('.info .end-date').innerText = endDate;
   }
