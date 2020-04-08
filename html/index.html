@@ -26,6 +26,18 @@
         color: inherit;
     }
 
+    .buttons {
+      font-size: 2rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .buttons button {
+      margin: 0 1rem;
+    }
+
     .totals {
       font-size: 2rem;
       display: flex;
@@ -117,6 +129,13 @@
   <div class="info">
     <p>From 2020-03-15 to <span class="end-date">2020-04-05</span>.</p>
     <p>Data source: <a href="https://epistat.wiv-isp.be/Covid/">https://epistat.wiv-isp.be/Covid/</a></p>
+  </div>
+
+  <div class="buttons">
+    <button data-series="0,1" data-state="on">Toggle In/Out</button>
+    <button data-series="2" data-state="on">Toggle Hospital</button>
+    <button data-series="3" data-state="on">Toggle Deceased</button>
+    <button data-series="4,5" data-state="off">Toggle Tested/Infected</button>
   </div>
 
   <div class="chart-container">
@@ -247,7 +266,8 @@ window.onload = function() {
           borderWidth: 1,
           fill: false,
           yAxisID: 'y-axis-3',
-          data: dataPointsTests
+          data: dataPointsTests,
+          hidden: true
         },
         {
           label: 'Infected',
@@ -257,7 +277,8 @@ window.onload = function() {
           borderWidth: 1,
           fill: false,
           yAxisID: 'y-axis-3',
-          data: dataPointsInfected
+          data: dataPointsInfected,
+          hidden: true
         }
       ]
     };
@@ -332,6 +353,21 @@ window.onload = function() {
     document.querySelector('.total-infected .last').innerText = (lastInfected > 0 ? '+' : '') + lastInfected;
 
     document.querySelector('.info .end-date').innerText = endDate;
+
+    // Bind buttons.
+    let buttons = document.querySelectorAll('.buttons button');
+    buttons.forEach(b => b.addEventListener('click', toggleButton));
+  }
+
+  toggleButton = function(event) {
+    let button = event.target;
+    let indexes = button.getAttribute('data-series').split(',');
+    let state = button.getAttribute('data-state');
+
+    indexes.forEach(i => window.myChart.data.datasets[i].hidden = (state == 'on'));
+
+    window.myChart.update();
+    button.setAttribute('data-state', state == 'off' ? 'on' : 'off');
   }
 
   fetch('./data.json')
