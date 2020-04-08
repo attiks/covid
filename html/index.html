@@ -45,12 +45,6 @@
       justify-content: center;
       text-align: center;
     }
-    .total-in {
-      color: #990000;
-    }
-    .total-out {
-      color: #009900;
-    }
 
     .last {
       position: absolute;
@@ -63,12 +57,28 @@
     .total .last {
       background-color: #333333;
     }
+
     .total-in .last {
       background-color: #990000;
     }
+    .total-in {
+      color: #990000;
+    }
+
     .total-out .last {
       background-color: #009900;
     }
+    .total-out {
+      color: #009900;
+    }
+
+    .total-deceased .last {
+      background-color: #000099;
+    }
+    .total-deceased {
+      color: #000099;
+    }
+
 
     .info p {
       text-align: center;
@@ -236,7 +246,7 @@ window.onload = function() {
           borderColor: '#009999',
           borderWidth: 1,
           fill: false,
-          yAxisID: 'y-axis-2',
+          yAxisID: 'y-axis-3',
           data: dataPointsTests
         },
         {
@@ -246,7 +256,7 @@ window.onload = function() {
           borderColor: '#009999',
           borderWidth: 1,
           fill: false,
-          yAxisID: 'y-axis-2',
+          yAxisID: 'y-axis-3',
           data: dataPointsInfected
         }
       ]
@@ -294,6 +304,13 @@ window.onload = function() {
               afterBuildTicks: function(chart) {
                 chart.ticks.push(...ticks);
               }
+            },
+            {
+              type: 'linear',
+              beginAtZero: true,
+              display: true,
+              position: 'right',
+              id: 'y-axis-3',
             }
           ],
         }
