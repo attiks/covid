@@ -4,7 +4,7 @@ curl https://epistat.sciensano.be/Data/COVID19BE_MORT.json | jq 'map(select(.DAT
 
 curl https://epistat.sciensano.be/Data/COVID19BE_CASES_AGESEX.json | jq 'map(select(.DATE >= "2020-03-15")) | reduce .[] as $pair ({}; .[$pair.DATE].infected += $pair.CASES)' > data_infected.json
 
-curl https://epistat.sciensano.be/Data/COVID19BE_tests.json | jq '."SASTableData+COVID19BE_TESTS" | map(select(.DATE >= "2020-03-15")) | reduce .[] as $pair ({}; .[$pair.DATE].tests += $pair.TESTS)' > data_tests.json
+curl https://epistat.sciensano.be/Data/COVID19BE_tests.json | jq 'map(select(.DATE >= "2020-03-15")) | reduce .[] as $pair ({}; .[$pair.DATE].tests += $pair.TESTS)' > data_tests.json
 
 jq -n 'reduce inputs as $i ({}; . * $i)' data_hospital.json data_deceased.json > data_1.json
 jq -n 'reduce inputs as $i ({}; . * $i)' data_1.json data_infected.json > data_2.json
