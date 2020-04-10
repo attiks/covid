@@ -1,4 +1,4 @@
-curl https://epistat.sciensano.be/Data/COVID19BE_HOSP.json | jq 'reduce .[] as $pair ({}; .[$pair.DATE].in += $pair.NEW_IN | .[$pair.DATE].out += $pair.NEW_OUT | .[$pair.DATE].delta += $pair.NEW_IN - $pair.NEW_OUT )' > data_hospital.json
+curl https://epistat.sciensano.be/Data/COVID19BE_HOSP.json | jq 'reduce .[] as $pair ({}; .[$pair.DATE].total_in += $pair.TOTAL_IN | .[$pair.DATE].total_icu += $pair.TOTAL_IN_ICU | .[$pair.DATE].total_resp += $pair.TOTAL_IN_RESP | .[$pair.DATE].in += $pair.NEW_IN | .[$pair.DATE].out += $pair.NEW_OUT | .[$pair.DATE].delta += $pair.NEW_IN - $pair.NEW_OUT )' > data_hospital.json
 
 curl https://epistat.sciensano.be/Data/COVID19BE_MORT.json | jq 'map(select(.DATE >= "2020-03-15")) | reduce .[] as $pair ({}; .[$pair.DATE].deceased += $pair.DEATHS)' > data_deceased.json
 
