@@ -163,7 +163,9 @@ window.onload = function() {
     var lastTests = 0;
     var lastInfected = 0;
 
-    var endDate = '2020-04-05';
+    // Default end date is yesterday.
+    var endDate = formatDate(Date.now() - 86400000);
+    var lastDate = '';
 
     var dataLabels = [];
     var dataPointsIn = [];
@@ -174,35 +176,40 @@ window.onload = function() {
     var dataPointsInfected = [];
 
     for (var row in data) {
+      // Ignore future dates.
+      if (row > endDate) {
+        continue;
+      }
+
       dataLabels.push(row);
 
       dataPointsIn.push({
-        x: new Date(data),
+        x: new Date(row),
         y: data[row].in
       });
 
       dataPointsOut.push({
-        x: new Date(data),
+        x: new Date(row),
         y: data[row].out
       });
 
       dataPointsDelta.push({
-        x: new Date(data),
+        x: new Date(row),
         y: data[row].delta + totalDelta
       });
 
       dataPointsDeceased.push({
-        x: new Date(data),
+        x: new Date(row),
         y: data[row].deceased + totalDeceased
       });
 
       dataPointsTests.push({
-        x: new Date(data),
+        x: new Date(row),
         y: data[row].tests + totalTests
       });
 
       dataPointsInfected.push({
-        x: new Date(data),
+        x: new Date(row),
         y: data[row].infected + totalInfected
       });
 
@@ -210,17 +217,18 @@ window.onload = function() {
       lastOut = data[row].out;
       lastDeceased = data[row].deceased;
       lastTests = data[row].tests;
-      lastInfected = data[row].infected;
-
-      endDate = row;
+      lastInfected = data[row].infected ? data[row].infected : 0;
+      lastDate = row;
 
       totalIn += data[row].in;
       totalOut += data[row].out;
       totalDelta += data[row].delta;
       totalDeceased += data[row].deceased;
       totalTests += data[row].tests;
-      totalInfected += data[row].infected;
+      totalInfected += data[row].infected ? data[row].infected : 0;
     }
+
+    endDate = lastDate;
 
     var barChartData = {
       labels: dataLabels,
@@ -371,6 +379,23 @@ window.onload = function() {
 
     window.myChart.update();
     button.setAttribute('data-state', state == 'off' ? 'on' : 'off');
+  }
+
+  formatDate = function (date) {
+    var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+    if (month.length < 2) {
+      month = '0' + month;
+    }
+
+    if (day.length < 2) {
+      day = '0' + day;
+    }
+
+    return [year, month, day].join('-');
   }
 
   fetch('./data.json')
