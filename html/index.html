@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Covid data Belgium</title>
   <script src="./Chart.min.js"></script>
+  <script src="./chartjs-plugin-annotation.js"></script> 
   <style>
     html {
         font-family: sans-serif;
@@ -163,6 +164,8 @@ window.onload = function() {
     var lastTests = 0;
     var lastInfected = 0;
 
+    var maxDelta = 0;
+
     // Default end date is yesterday.
     var endDate = formatDate(Date.now() - 86400000);
     var lastDate = '';
@@ -226,6 +229,8 @@ window.onload = function() {
       totalDeceased += data[row].deceased;
       totalTests += data[row].tests;
       totalInfected += data[row].infected ? data[row].infected : 0;
+
+      maxDelta = Math.max(maxDelta, data[row].delta + totalDelta);
     }
 
     endDate = lastDate;
@@ -345,6 +350,20 @@ window.onload = function() {
               id: 'y-axis-3',
             }
           ],
+        },
+        annotation: {
+          annotations: [{
+            type: 'line',
+            mode: 'horizontal',
+            scaleID: 'y-axis-2',
+            value: maxDelta,
+            borderColor: 'rgb(75, 192, 192)',
+            borderWidth: 2,
+            label: {
+              enabled: false,
+              content: 'Max in hospital'
+            }
+          }]
         }
       }
     });
