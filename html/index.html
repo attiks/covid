@@ -113,7 +113,7 @@
       <span class='last'><span>
     </div>
     <div class="total total-delta">
-      <p>People in hospital<br><span class='num'><span></p>
+      <p>People in hospital (d)<br><span class='num'><span></p>
       <span class='last'><span>
     </div>
     <div class="total total-deceased">
@@ -137,9 +137,9 @@
 
   <div class="buttons">
     <button data-series="0,1" data-state="on">Toggle In/Out</button>
-    <button data-series="2" data-state="on">Toggle Hospital</button>
-    <button data-series="3" data-state="on">Toggle Deceased</button>
-    <button data-series="4,5" data-state="off">Toggle Tested/Infected</button>
+    <button data-series="2,3" data-state="on">Toggle Hospital</button>
+    <button data-series="4" data-state="on">Toggle Deceased</button>
+    <button data-series="5,6,7" data-state="off">Toggle Tested/Infected</button>
   </div>
 
   <div class="chart-container">
@@ -163,6 +163,8 @@ window.onload = function() {
     var lastDeceased = 0;
     var lastTests = 0;
     var lastInfected = 0;
+    var lastInfected5 = [];
+    var lastInfected5Average = 0;
 
     var maxDelta = 0;
 
@@ -174,9 +176,11 @@ window.onload = function() {
     var dataPointsIn = [];
     var dataPointsOut = [];
     var dataPointsDelta = [];
+    var dataPointsHospital = [];
     var dataPointsDeceased = [];
     var dataPointsTests = [];
     var dataPointsInfected = [];
+    var dataPointsInfectedDaily = [];
 
     for (var row in data) {
       // Ignore future dates.
@@ -201,6 +205,11 @@ window.onload = function() {
         y: data[row].delta + totalDelta
       });
 
+      dataPointsHospital.push({
+        x: new Date(row),
+        y: data[row].total_in
+      });
+
       dataPointsDeceased.push({
         x: new Date(row),
         y: data[row].deceased + totalDeceased
@@ -216,12 +225,21 @@ window.onload = function() {
         y: data[row].infected + totalInfected
       });
 
+      dataPointsInfectedDaily.push({
+        x: new Date(row),
+        y: data[row].infected //lastInfected5Average != 0 ? data[row].infected / lastInfected5Average : 1.8
+      });
+
+      lastDate = row;
       lastIn = data[row].in;
       lastOut = data[row].out;
       lastDeceased = data[row].deceased;
       lastTests = data[row].tests;
       lastInfected = data[row].infected ? data[row].infected : 0;
-      lastDate = row;
+
+      lastInfected5.push(lastInfected);
+      lastInfected5 = lastInfected5.slice(Math.max(lastInfected5.length - 5, 0));
+      lastInfected5Average = lastInfected5.reduce((a, b) => a + b, 0) / lastInfected5.length;
 
       totalIn += data[row].in;
       totalOut += data[row].out;
@@ -255,7 +273,7 @@ window.onload = function() {
           data: dataPointsOut
         },
         {
-          label: 'Hospital',
+          label: 'Hospital (delta)',
           type: 'line',
           backgroundColor: '#333333',
           borderColor: '#333333',
@@ -263,6 +281,16 @@ window.onload = function() {
           fill: false,
           yAxisID: 'y-axis-2',
           data: dataPointsDelta
+        },
+        {
+          label: 'Hospital (total)',
+          type: 'line',
+          backgroundColor: '#656565',
+          borderColor: '#656565',
+          borderWidth: 1,
+          fill: false,
+          yAxisID: 'y-axis-2',
+          data: dataPointsHospital
         },
         {
           label: 'Deceased',
@@ -294,6 +322,17 @@ window.onload = function() {
           fill: false,
           yAxisID: 'y-axis-3',
           data: dataPointsInfected,
+          hidden: true
+        },
+        {
+          label: 'People infected',
+          type: 'line',
+          backgroundColor: '#999900',
+          borderColor: '#999900',
+          borderWidth: 1,
+          fill: false,
+          yAxisID: 'y-axis-1',
+          data: dataPointsInfectedDaily,
           hidden: true
         }
       ]
