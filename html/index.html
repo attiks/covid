@@ -3,8 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title>Covid data Belgium</title>
+  <script src="./hammerjs.js"></script>
+  <script src="./moment.min.js"></script>
   <script src="./Chart.min.js"></script>
-  <script src="./chartjs-plugin-annotation.js"></script> 
+  <script src="./chartjs-plugin-annotation.js"></script>
+  <script src="./chartjs-plugin-zoom.min.js"></script>
   <style>
     html {
         font-family: sans-serif;
@@ -144,6 +147,7 @@
 
   <div class="chart-container">
     <canvas id="canvas"></canvas>
+    <button id="reset-zoom">Reset zoom</button>
   </div>
 </body>
 
@@ -353,6 +357,13 @@ window.onload = function() {
           display: false
         },
         scales: {
+          xAxes: [{
+            type: 'time',
+            time: {
+              unit: 'day',
+              distribution: 'linear'
+            }
+          }],
           yAxes: [
             {
               type: 'linear',
@@ -403,6 +414,15 @@ window.onload = function() {
               content: 'Max in hospital'
             }
           }]
+        },
+        plugins: {
+          zoom: {
+            zoom: {
+              enabled: true,
+              drag: true,
+              mode: 'xy'
+            }
+          }
         }
       }
     });
@@ -455,6 +475,10 @@ window.onload = function() {
 
     return [year, month, day].join('-');
   }
+
+  document.getElementById('reset-zoom').addEventListener('click', function () {
+    window.myChart.resetZoom();
+  });
 
   fetch('./data.json')
     .then(response => {
