@@ -180,6 +180,7 @@ window.onload = function() {
     var dataPointsIn = [];
     var dataPointsOut = [];
     var dataPointsInOut = [];
+    var dataPointsInOutColors = [];
     var dataPointsDelta = [];
     var dataPointsHospital = [];
     var dataPointsDeceased = [];
@@ -209,6 +210,7 @@ window.onload = function() {
         x: new Date(row),
         y: data[row].in - data[row].out
       });
+      dataPointsInOutColors.push(data[row].in > data[row].out ? 'red' : 'green');
 
       dataPointsDelta.push({
         x: new Date(row),
@@ -286,8 +288,8 @@ window.onload = function() {
         },
         {
           label: 'People in/out',
-          backgroundColor: '#ff0000',
-          borderColor: '#ff0000',
+          backgroundColor: dataPointsInOutColors,
+          borderColor: '#9e9e9e',
           borderWidth: 1,
           yAxisID: 'y-axis-1',
           data: dataPointsInOut
@@ -346,7 +348,7 @@ window.onload = function() {
         },
         {
           label: 'People infected',
-          type: 'line',
+          type: 'bar',
           backgroundColor: '#999900',
           borderColor: '#999900',
           borderWidth: 1,
