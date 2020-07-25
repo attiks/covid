@@ -179,6 +179,7 @@ window.onload = function() {
     var dataLabels = [];
     var dataPointsIn = [];
     var dataPointsOut = [];
+    var dataPointsInOut = [];
     var dataPointsDelta = [];
     var dataPointsHospital = [];
     var dataPointsDeceased = [];
@@ -202,6 +203,11 @@ window.onload = function() {
       dataPointsOut.push({
         x: new Date(row),
         y: data[row].out
+      });
+
+      dataPointsInOut.push({
+        x: new Date(row),
+        y: data[row].in - data[row].out
       });
 
       dataPointsDelta.push({
@@ -277,6 +283,14 @@ window.onload = function() {
           borderWidth: 1,
           yAxisID: 'y-axis-1',
           data: dataPointsOut
+        },
+        {
+          label: 'People in/out',
+          backgroundColor: '#ff0000',
+          borderColor: '#ff0000',
+          borderWidth: 1,
+          yAxisID: 'y-axis-1',
+          data: dataPointsInOut
         },
         {
           label: 'Hospital (delta)',
