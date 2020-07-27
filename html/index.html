@@ -167,8 +167,8 @@ window.onload = function() {
     var lastDeceased = 0;
     var lastTests = 0;
     var lastInfected = 0;
-    var lastInfected5 = [];
-    var lastInfected5Average = 0;
+    var lastInfected7 = [];
+    var lastInfected7Average = 0;
 
     var maxDelta = 0;
 
@@ -239,11 +239,6 @@ window.onload = function() {
         y: data[row].infected + totalInfected
       });
 
-      dataPointsInfectedDaily.push({
-        x: new Date(row),
-        y: data[row].infected //lastInfected5Average != 0 ? data[row].infected / lastInfected5Average : 1.8
-      });
-
       lastDate = row;
       lastIn = data[row].in;
       lastOut = data[row].out;
@@ -251,9 +246,14 @@ window.onload = function() {
       lastTests = data[row].tests;
       lastInfected = data[row].infected ? data[row].infected : 0;
 
-      lastInfected5.push(lastInfected);
-      lastInfected5 = lastInfected5.slice(Math.max(lastInfected5.length - 5, 0));
-      lastInfected5Average = lastInfected5.reduce((a, b) => a + b, 0) / lastInfected5.length;
+      lastInfected7.push(lastInfected);
+      lastInfected7 = lastInfected7.slice(Math.max(lastInfected7.length - 7, 0));
+      lastInfected7Average = Math.round(lastInfected7.reduce((a, b) => a + b, 0) / lastInfected7.length);
+
+      dataPointsInfectedDaily.push({
+        x: new Date(row),
+        y: lastInfected7Average
+      });
 
       totalIn += data[row].in;
       totalOut += data[row].out;
@@ -276,7 +276,8 @@ window.onload = function() {
           borderColor: '#990000',
           borderWidth: 1,
           yAxisID: 'y-axis-1',
-          data: dataPointsIn
+          data: dataPointsIn,
+          hidden: false
         },
         {
           label: 'People out',
@@ -284,7 +285,19 @@ window.onload = function() {
           borderColor: '#009900',
           borderWidth: 1,
           yAxisID: 'y-axis-1',
-          data: dataPointsOut
+          data: dataPointsOut,
+          hidden: false
+        },
+        {
+          label: 'People infected (7d gem.)',
+          type: 'bar',
+          backgroundColor: '#999900',
+          borderColor: '#999900',
+          borderWidth: 1,
+          fill: false,
+          yAxisID: 'y-axis-1',
+          data: dataPointsInfectedDaily,
+          hidden: false
         },
         {
           label: 'People in/out',
@@ -292,7 +305,8 @@ window.onload = function() {
           borderColor: '#9e9e9e',
           borderWidth: 1,
           yAxisID: 'y-axis-1',
-          data: dataPointsInOut
+          data: dataPointsInOut,
+          hidden: true
         },
         {
           label: 'Hospital (delta)',
@@ -302,7 +316,8 @@ window.onload = function() {
           borderWidth: 1,
           fill: false,
           yAxisID: 'y-axis-2',
-          data: dataPointsDelta
+          data: dataPointsDelta,
+          hidden: true
         },
         {
           label: 'Hospital (total)',
@@ -312,7 +327,8 @@ window.onload = function() {
           borderWidth: 1,
           fill: false,
           yAxisID: 'y-axis-2',
-          data: dataPointsHospital
+          data: dataPointsHospital,
+          hidden: false
         },
         {
           label: 'Deceased',
@@ -322,7 +338,8 @@ window.onload = function() {
           borderWidth: 1,
           fill: false,
           yAxisID: 'y-axis-2',
-          data: dataPointsDeceased
+          data: dataPointsDeceased,
+          hidden: true
         },
         {
           label: 'Tested',
@@ -344,17 +361,6 @@ window.onload = function() {
           fill: false,
           yAxisID: 'y-axis-3',
           data: dataPointsInfected,
-          hidden: true
-        },
-        {
-          label: 'People infected',
-          type: 'bar',
-          backgroundColor: '#999900',
-          borderColor: '#999900',
-          borderWidth: 1,
-          fill: false,
-          yAxisID: 'y-axis-1',
-          data: dataPointsInfectedDaily,
           hidden: true
         }
       ]
