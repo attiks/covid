@@ -147,7 +147,15 @@
 
   <div class="chart-container">
     <canvas id="canvas"></canvas>
-    <button id="reset-zoom">Reset zoom</button>
+    <div class="zoom-buttons">
+      <button id="reset-zoom">Reset zoom</button>
+      <button data-days="7" class="button--last-x">Last 7 days</button>
+      <button data-days="14" class="button--last-x">Last 14 days</button>
+      <button data-days="30" class="button--last-x">Last 30 days</button>
+      <button data-days="60" class="button--last-x">Last 60 days</button>
+      <button data-days="90" class="button--last-x">Last 90 days</button>
+      <button data-days="120" class="button--last-x">Last 120 days</button>
+    </div>
   </div>
 </body>
 
@@ -386,6 +394,9 @@ window.onload = function() {
             time: {
               unit: 'day',
               distribution: 'linear'
+            },
+            ticks: {
+              min: ''
             }
           }],
           yAxes: [
@@ -501,8 +512,51 @@ window.onload = function() {
   }
 
   document.getElementById('reset-zoom').addEventListener('click', function () {
+    window.myChart.options.scales.xAxes[0].ticks.min = '';
+    window.myChart.options.scales.yAxes[0].ticks.max = '';
+    window.myChart.update();
     window.myChart.resetZoom();
   });
+
+  // Bind buttons.
+  let buttons = document.querySelectorAll('.button--last-x');
+  buttons.forEach(b => b.addEventListener('click', function(event) {
+    let button = event.target;
+    let days = button.getAttribute('data-days');
+    let endDate = Date.now() - 86400000;
+    let startDate = endDate - days * 86400000;
+    let maxY = getMax(window.myChart, startDate);
+
+    window.myChart.options.scales.xAxes[0].ticks.min = formatDate(startDate);
+    if (maxY > 0) {
+      window.myChart.options.scales.yAxes[0].ticks.max = maxY * 1.05;
+    }
+    window.myChart.update();
+  }));
+
+  var getMax = function(chart, startDate) {
+    let datasets = chart.data.datasets;
+    let max = 0;
+
+    for (var i = 0; i < datasets.length; i++) {
+      let dataset = datasets[i];
+      if (dataset.hidden) {
+        continue;
+      }
+
+      if (dataset.yAxisID != 'y-axis-1') {
+        continue;
+      }
+
+      dataset.data.forEach(function(d) {
+        if (d.x.getTime() > startDate) {
+          max = Math.max(max, d.y);
+        }
+      }.bind(startDate));
+    }
+
+    return max;
+  };
 
   fetch('./data.json')
     .then(response => {
