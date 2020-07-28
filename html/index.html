@@ -512,8 +512,8 @@ window.onload = function() {
   }
 
   document.getElementById('reset-zoom').addEventListener('click', function () {
-    window.myChart.options.scales.xAxes[0].ticks.min = '';
-    window.myChart.options.scales.yAxes[0].ticks.max = '';
+    delete window.myChart.options.scales.xAxes[0].ticks.min;
+    delete window.myChart.options.scales.yAxes[0].ticks.max;
     window.myChart.update();
     window.myChart.resetZoom();
   });
