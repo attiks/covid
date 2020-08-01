@@ -10,5 +10,5 @@ jq -n 'reduce inputs as $i ({}; . * $i)' data_hospital.json data_deceased.json >
 jq -n 'reduce inputs as $i ({}; . * $i)' data_1.json data_infected.json > data_2.json
 jq -n 'reduce inputs as $i ({}; . * $i)' data_2.json data_tests.json > data.json
 
-mv data.json html
+mv data.json docs
 rm data_*.json
