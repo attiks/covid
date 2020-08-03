@@ -390,6 +390,20 @@ window.onload = function() {
         responsive: true,
         legend: {
           position: 'top',
+          onClick: function(e, legendItem) {
+            var index = legendItem.datasetIndex;
+            var ci = this.chart;
+            var meta = ci.getDatasetMeta(index);
+
+            // See controller.isDatasetVisible comment
+            meta.hidden = meta.hidden === null ? !ci.data.datasets[index].hidden : null;
+
+            // Check Axis visibility.
+            checkAxisVisibility(ci, meta.yAxisID);
+
+            // We hid a dataset ... rerender the chart
+            ci.update();
+          }
         },
         title: {
           display: false
@@ -436,7 +450,7 @@ window.onload = function() {
             {
               type: 'linear',
               beginAtZero: true,
-              display: true,
+              display: false,
               position: 'right',
               id: 'y-axis-3',
             }
@@ -459,8 +473,8 @@ window.onload = function() {
         plugins: {
           zoom: {
             zoom: {
-              enabled: true,
-              drag: true,
+              enabled: false,
+              drag: false,
               mode: 'xy'
             }
           }
@@ -496,6 +510,8 @@ window.onload = function() {
 
     indexes.forEach(i => window.myChart.data.datasets[i].hidden = (state == 'on'));
 
+    checkAllAxisVisibility(window.myChart);
+
     window.myChart.update();
     button.setAttribute('data-state', state == 'off' ? 'on' : 'off');
   }
@@ -515,6 +531,36 @@ window.onload = function() {
     }
 
     return [year, month, day].join('-');
+  }
+
+  checkAllAxisVisibility = function(chart) {
+    for (var i = 0; i < chart.options.scales.yAxes.length; i++) {
+      checkAxisVisibility(chart, chart.options.scales.yAxes[i].id);
+    }
+  }
+
+  checkAxisVisibility = function (chart, yAxisID) {
+    let datasets = chart.data.datasets;
+    let show = false;
+
+    for (var i = 0; i < datasets.length; i++) {
+      let dataset = datasets[i];
+
+      if (dataset.yAxisID != yAxisID) {
+        continue;
+      }
+
+      if (chart.isDatasetVisible(i)) {
+        show = true;
+      }
+    }
+
+    for (var i = 0; i < chart.options.scales.yAxes.length; i++) {
+      let yAxis = chart.options.scales.yAxes[i];
+      if (yAxis.id == yAxisID) {
+        chart.options.scales.yAxes[i].display = show;
+      }
+    }
   }
 
   document.getElementById('reset-zoom').addEventListener('click', function () {
