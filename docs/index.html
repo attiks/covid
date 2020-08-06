@@ -201,6 +201,7 @@ window.onload = function() {
     var dataPointsTests = [];
     var dataPointsInfected = [];
     var dataPointsInfectedDaily = [];
+    var dataPointsTestsInfected = [];
 
     for (var row in data) {
       // Ignore future dates.
@@ -251,6 +252,11 @@ window.onload = function() {
       dataPointsInfected.push({
         x: new Date(row),
         y: data[row].infected + totalInfected
+      });
+
+      dataPointsTestsInfected.push({
+        x: new Date(row),
+        y: (100 * (data[row].infected / data[row].tests)).toFixed(2)
       });
 
       lastDate = row;
@@ -376,6 +382,17 @@ window.onload = function() {
           yAxisID: 'y-axis-3',
           data: dataPointsInfected,
           hidden: true
+        },
+        {
+          label: 'Infected/Tests (%)',
+          type: 'line',
+          backgroundColor: '#009999',
+          borderColor: '#009999',
+          borderWidth: 1,
+          fill: false,
+          yAxisID: 'y-axis-1',
+          data: dataPointsTestsInfected,
+          hidden: true
         }
       ]
     };
@@ -456,6 +473,7 @@ window.onload = function() {
             }
           ],
         },
+        /*
         annotation: {
           annotations: [{
             type: 'line',
@@ -469,7 +487,7 @@ window.onload = function() {
               content: 'Max in hospital'
             }
           }]
-        },
+        },*/
         plugins: {
           zoom: {
             zoom: {
