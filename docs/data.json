@@ -28,7 +28,7 @@
     "in": 122,
     "out": 31,
     "delta": 91,
-    "deceased": 12,
+    "deceased": 10,
     "infected": 422,
     "tests": 2255
   },
@@ -50,7 +50,7 @@
     "in": 207,
     "out": 49,
     "delta": 158,
-    "deceased": 28,
+    "deceased": 33,
     "infected": 713,
     "tests": 3395
   },
@@ -61,7 +61,7 @@
     "in": 288,
     "out": 55,
     "delta": 233,
-    "deceased": 30,
+    "deceased": 36,
     "infected": 663,
     "tests": 3120
   },
@@ -72,7 +72,7 @@
     "in": 320,
     "out": 74,
     "delta": 246,
-    "deceased": 39,
+    "deceased": 40,
     "infected": 470,
     "tests": 2276
   },
@@ -83,7 +83,7 @@
     "in": 273,
     "out": 61,
     "delta": 212,
-    "deceased": 41,
+    "deceased": 47,
     "infected": 486,
     "tests": 1414
   },
@@ -105,7 +105,7 @@
     "in": 412,
     "out": 115,
     "delta": 297,
-    "deceased": 74,
+    "deceased": 76,
     "infected": 1195,
     "tests": 3975
   },
@@ -116,7 +116,7 @@
     "in": 535,
     "out": 128,
     "delta": 407,
-    "deceased": 96,
+    "deceased": 107,
     "infected": 1199,
     "tests": 4282
   },
@@ -138,7 +138,7 @@
     "in": 575,
     "out": 205,
     "delta": 370,
-    "deceased": 123,
+    "deceased": 128,
     "infected": 1519,
     "tests": 4930
   },
@@ -149,7 +149,7 @@
     "in": 629,
     "out": 296,
     "delta": 333,
-    "deceased": 133,
+    "deceased": 141,
     "infected": 844,
     "tests": 3850
   },
@@ -160,7 +160,7 @@
     "in": 545,
     "out": 169,
     "delta": 376,
-    "deceased": 139,
+    "deceased": 149,
     "infected": 683,
     "tests": 2419
   },
@@ -171,7 +171,7 @@
     "in": 478,
     "out": 168,
     "delta": 310,
-    "deceased": 169,
+    "deceased": 170,
     "infected": 1738,
     "tests": 4101
   },
@@ -182,7 +182,7 @@
     "in": 553,
     "out": 436,
     "delta": 117,
-    "deceased": 187,
+    "deceased": 208,
     "infected": 1681,
     "tests": 6432
   },
@@ -193,7 +193,7 @@
     "in": 584,
     "out": 363,
     "delta": 221,
-    "deceased": 251,
+    "deceased": 232,
     "infected": 1516,
     "tests": 5891
   },
@@ -204,7 +204,7 @@
     "in": 568,
     "out": 377,
     "delta": 191,
-    "deceased": 213,
+    "deceased": 219,
     "infected": 1479,
     "tests": 6088
   },
@@ -215,7 +215,7 @@
     "in": 504,
     "out": 375,
     "delta": 129,
-    "deceased": 233,
+    "deceased": 236,
     "infected": 1694,
     "tests": 6718
   },
@@ -226,7 +226,7 @@
     "in": 499,
     "out": 504,
     "delta": -5,
-    "deceased": 274,
+    "deceased": 270,
     "infected": 922,
     "tests": 5368
   },
@@ -237,7 +237,7 @@
     "in": 358,
     "out": 235,
     "delta": 123,
-    "deceased": 235,
+    "deceased": 246,
     "infected": 665,
     "tests": 3828
   },
@@ -248,7 +248,7 @@
     "in": 314,
     "out": 171,
     "delta": 143,
-    "deceased": 272,
+    "deceased": 257,
     "infected": 1934,
     "tests": 5840
   },
@@ -259,7 +259,7 @@
     "in": 490,
     "out": 524,
     "delta": -34,
-    "deceased": 303,
+    "deceased": 277,
     "infected": 1515,
     "tests": 7509
   },
@@ -270,7 +270,7 @@
     "in": 459,
     "out": 483,
     "delta": -24,
-    "deceased": 317,
+    "deceased": 321,
     "infected": 1598,
     "tests": 7972
   },
@@ -281,7 +281,7 @@
     "in": 462,
     "out": 404,
     "delta": 58,
-    "deceased": 270,
+    "deceased": 271,
     "infected": 2239,
     "tests": 8225
   },
@@ -292,7 +292,7 @@
     "in": 421,
     "out": 418,
     "delta": 3,
-    "deceased": 319,
+    "deceased": 302,
     "infected": 2336,
     "tests": 8539
   },
@@ -303,7 +303,7 @@
     "in": 393,
     "out": 482,
     "delta": -89,
-    "deceased": 288,
+    "deceased": 285,
     "infected": 1029,
     "tests": 8153
   },
@@ -314,7 +314,7 @@
     "in": 270,
     "out": 239,
     "delta": 31,
-    "deceased": 342,
+    "deceased": 265,
     "infected": 524,
     "tests": 7290
   },
@@ -325,7 +325,7 @@
     "in": 242,
     "out": 161,
     "delta": 81,
-    "deceased": 280,
+    "deceased": 277,
     "infected": 537,
     "tests": 6701
   },
@@ -336,7 +336,7 @@
     "in": 250,
     "out": 239,
     "delta": 11,
-    "deceased": 275,
+    "deceased": 261,
     "infected": 1560,
     "tests": 8164
   },
@@ -347,7 +347,7 @@
     "in": 310,
     "out": 455,
     "delta": -145,
-    "deceased": 275,
+    "deceased": 280,
     "infected": 1633,
     "tests": 10984
   },
@@ -358,7 +358,7 @@
     "in": 320,
     "out": 399,
     "delta": -79,
-    "deceased": 251,
+    "deceased": 246,
     "infected": 1674,
     "tests": 10749
   },
@@ -391,7 +391,7 @@
     "in": 232,
     "out": 138,
     "delta": 94,
-    "deceased": 211,
+    "deceased": 190,
     "infected": 443,
     "tests": 7208
   },
@@ -402,7 +402,7 @@
     "in": 172,
     "out": 106,
     "delta": 66,
-    "deceased": 198,
+    "deceased": 206,
     "infected": 1276,
     "tests": 11922
   },
@@ -413,7 +413,7 @@
     "in": 263,
     "out": 432,
     "delta": -169,
-    "deceased": 202,
+    "deceased": 203,
     "infected": 1271,
     "tests": 10879
   },
@@ -424,7 +424,7 @@
     "in": 211,
     "out": 367,
     "delta": -156,
-    "deceased": 192,
+    "deceased": 181,
     "infected": 777,
     "tests": 15603
   },
@@ -435,7 +435,7 @@
     "in": 210,
     "out": 322,
     "delta": -112,
-    "deceased": 173,
+    "deceased": 158,
     "infected": 976,
     "tests": 17392
   },
@@ -446,7 +446,7 @@
     "in": 217,
     "out": 295,
     "delta": -78,
-    "deceased": 148,
+    "deceased": 157,
     "infected": 811,
     "tests": 19085
   },
@@ -457,7 +457,7 @@
     "in": 202,
     "out": 368,
     "delta": -166,
-    "deceased": 155,
+    "deceased": 143,
     "infected": 388,
     "tests": 17214
   },
@@ -468,7 +468,7 @@
     "in": 127,
     "out": 93,
     "delta": 34,
-    "deceased": 176,
+    "deceased": 154,
     "infected": 205,
     "tests": 13894
   },
@@ -479,7 +479,7 @@
     "in": 123,
     "out": 65,
     "delta": 58,
-    "deceased": 127,
+    "deceased": 135,
     "infected": 755,
     "tests": 17501
   },
@@ -490,7 +490,7 @@
     "in": 174,
     "out": 340,
     "delta": -166,
-    "deceased": 115,
+    "deceased": 110,
     "infected": 569,
     "tests": 20405
   },
@@ -501,7 +501,7 @@
     "in": 178,
     "out": 293,
     "delta": -115,
-    "deceased": 98,
+    "deceased": 107,
     "infected": 522,
     "tests": 22684
   },
@@ -512,7 +512,7 @@
     "in": 152,
     "out": 316,
     "delta": -164,
-    "deceased": 84,
+    "deceased": 87,
     "infected": 586,
     "tests": 24899
   },
@@ -523,7 +523,7 @@
     "in": 128,
     "out": 319,
     "delta": -191,
-    "deceased": 98,
+    "deceased": 94,
     "infected": 237,
     "tests": 23667
   },
@@ -534,7 +534,7 @@
     "in": 77,
     "out": 98,
     "delta": -21,
-    "deceased": 73,
+    "deceased": 75,
     "infected": 286,
     "tests": 16566
   },
@@ -545,7 +545,7 @@
     "in": 59,
     "out": 69,
     "delta": -10,
-    "deceased": 96,
+    "deceased": 94,
     "infected": 140,
     "tests": 13446
   },
@@ -556,7 +556,7 @@
     "in": 84,
     "out": 63,
     "delta": 21,
-    "deceased": 98,
+    "deceased": 95,
     "infected": 670,
     "tests": 23254
   },
@@ -567,7 +567,7 @@
     "in": 116,
     "out": 295,
     "delta": -179,
-    "deceased": 81,
+    "deceased": 82,
     "infected": 546,
     "tests": 21533
   },
@@ -578,7 +578,7 @@
     "in": 98,
     "out": 244,
     "delta": -146,
-    "deceased": 75,
+    "deceased": 76,
     "infected": 552,
     "tests": 20800
   },
@@ -589,7 +589,7 @@
     "in": 108,
     "out": 221,
     "delta": -113,
-    "deceased": 78,
+    "deceased": 71,
     "infected": 442,
     "tests": 22078
   },
@@ -600,7 +600,7 @@
     "in": 75,
     "out": 210,
     "delta": -135,
-    "deceased": 70,
+    "deceased": 74,
     "infected": 483,
     "tests": 25917
   },
@@ -611,7 +611,7 @@
     "in": 83,
     "out": 231,
     "delta": -148,
-    "deceased": 68,
+    "deceased": 71,
     "infected": 240,
     "tests": 21030
   },
@@ -622,7 +622,7 @@
     "in": 60,
     "out": 55,
     "delta": 5,
-    "deceased": 73,
+    "deceased": 72,
     "infected": 118,
     "tests": 12309
   },
@@ -633,7 +633,7 @@
     "in": 43,
     "out": 35,
     "delta": 8,
-    "deceased": 62,
+    "deceased": 65,
     "infected": 476,
     "tests": 11064
   },
@@ -644,7 +644,7 @@
     "in": 70,
     "out": 206,
     "delta": -136,
-    "deceased": 48,
+    "deceased": 45,
     "infected": 395,
     "tests": 20541
   },
@@ -655,7 +655,7 @@
     "in": 81,
     "out": 173,
     "delta": -92,
-    "deceased": 54,
+    "deceased": 56,
     "infected": 321,
     "tests": 23159
   },
@@ -666,7 +666,7 @@
     "in": 67,
     "out": 190,
     "delta": -123,
-    "deceased": 46,
+    "deceased": 43,
     "infected": 305,
     "tests": 20298
   },
@@ -677,7 +677,7 @@
     "in": 65,
     "out": 159,
     "delta": -94,
-    "deceased": 38,
+    "deceased": 45,
     "infected": 346,
     "tests": 20900
   },
@@ -688,7 +688,7 @@
     "in": 60,
     "out": 170,
     "delta": -110,
-    "deceased": 28,
+    "deceased": 30,
     "infected": 147,
     "tests": 14428
   },
@@ -699,7 +699,7 @@
     "in": 43,
     "out": 27,
     "delta": 16,
-    "deceased": 35,
+    "deceased": 31,
     "infected": 81,
     "tests": 10108
   },
@@ -710,7 +710,7 @@
     "in": 50,
     "out": 30,
     "delta": 20,
-    "deceased": 35,
+    "deceased": 37,
     "infected": 317,
     "tests": 10710
   },
@@ -721,7 +721,7 @@
     "in": 58,
     "out": 160,
     "delta": -102,
-    "deceased": 30,
+    "deceased": 33,
     "infected": 292,
     "tests": 16725
   },
@@ -732,7 +732,7 @@
     "in": 71,
     "out": 141,
     "delta": -70,
-    "deceased": 32,
+    "deceased": 30,
     "infected": 385,
     "tests": 18776
   },
@@ -743,7 +743,7 @@
     "in": 56,
     "out": 135,
     "delta": -79,
-    "deceased": 29,
+    "deceased": 34,
     "infected": 70,
     "tests": 9878
   },
@@ -754,7 +754,7 @@
     "in": 34,
     "out": 32,
     "delta": 2,
-    "deceased": 38,
+    "deceased": 41,
     "infected": 248,
     "tests": 13285
   },
@@ -765,7 +765,7 @@
     "in": 48,
     "out": 117,
     "delta": -69,
-    "deceased": 24,
+    "deceased": 25,
     "infected": 123,
     "tests": 9227
   },
@@ -776,9 +776,9 @@
     "in": 27,
     "out": 25,
     "delta": 2,
-    "deceased": 34,
+    "deceased": 33,
     "infected": 75,
-    "tests": 7032
+    "tests": 7031
   },
   "2020-05-25": {
     "total_in": 1304,
@@ -787,7 +787,7 @@
     "in": 39,
     "out": 23,
     "delta": 16,
-    "deceased": 24,
+    "deceased": 26,
     "infected": 314,
     "tests": 9987
   },
@@ -798,7 +798,7 @@
     "in": 36,
     "out": 145,
     "delta": -109,
-    "deceased": 40,
+    "deceased": 24,
     "infected": 202,
     "tests": 16226
   },
@@ -809,7 +809,7 @@
     "in": 49,
     "out": 108,
     "delta": -59,
-    "deceased": 24,
+    "deceased": 25,
     "infected": 182,
     "tests": 17795
   },
@@ -820,7 +820,7 @@
     "in": 27,
     "out": 109,
     "delta": -82,
-    "deceased": 22,
+    "deceased": 26,
     "infected": 171,
     "tests": 13100
   },
@@ -831,7 +831,7 @@
     "in": 29,
     "out": 87,
     "delta": -58,
-    "deceased": 13,
+    "deceased": 16,
     "infected": 165,
     "tests": 13628
   },
@@ -842,7 +842,7 @@
     "in": 40,
     "out": 118,
     "delta": -78,
-    "deceased": 25,
+    "deceased": 23,
     "infected": 61,
     "tests": 9735
   },
@@ -853,7 +853,7 @@
     "in": 25,
     "out": 33,
     "delta": -8,
-    "deceased": 19,
+    "deceased": 22,
     "infected": 49,
     "tests": 6795
   },
@@ -864,7 +864,7 @@
     "in": 26,
     "out": 14,
     "delta": 12,
-    "deceased": 22,
+    "deceased": 21,
     "infected": 59,
     "tests": 5440
   },
@@ -875,7 +875,7 @@
     "in": 31,
     "out": 25,
     "delta": 6,
-    "deceased": 20,
+    "deceased": 23,
     "infected": 181,
     "tests": 10656
   },
@@ -1534,8 +1534,8 @@
     "out": 27,
     "delta": -1,
     "deceased": 2,
-    "infected": 306,
-    "tests": 20184
+    "infected": 307,
+    "tests": 20207
   },
   "2020-08-02": {
     "total_in": 271,
@@ -1557,7 +1557,7 @@
     "delta": 16,
     "deceased": 3,
     "infected": 794,
-    "tests": 16675
+    "tests": 16712
   },
   "2020-08-04": {
     "total_in": 265,
@@ -1578,7 +1578,7 @@
     "out": 22,
     "delta": 19,
     "deceased": 5,
-    "infected": 761,
+    "infected": 765,
     "tests": 26396
   },
   "2020-08-06": {
@@ -1589,7 +1589,7 @@
     "out": 39,
     "delta": -11,
     "deceased": 4,
-    "infected": 767,
+    "infected": 768,
     "tests": 23215
   },
   "2020-08-07": {
@@ -1600,8 +1600,8 @@
     "out": 28,
     "delta": -1,
     "deceased": 6,
-    "infected": 777,
-    "tests": 22764
+    "infected": 774,
+    "tests": 22772
   },
   "2020-08-08": {
     "total_in": 281,
@@ -1612,7 +1612,7 @@
     "delta": -8,
     "deceased": 2,
     "infected": 303,
-    "tests": 16661
+    "tests": 16663
   },
   "2020-08-09": {
     "total_in": 285,
@@ -1633,8 +1633,8 @@
     "out": 12,
     "delta": 21,
     "deceased": 11,
-    "infected": 872,
-    "tests": 16939
+    "infected": 873,
+    "tests": 16966
   },
   "2020-08-11": {
     "total_in": 307,
@@ -1645,7 +1645,7 @@
     "delta": -1,
     "deceased": 13,
     "infected": 717,
-    "tests": 25640
+    "tests": 25642
   },
   "2020-08-12": {
     "total_in": 301,
@@ -1656,7 +1656,7 @@
     "delta": -12,
     "deceased": 11,
     "infected": 611,
-    "tests": 22079
+    "tests": 22080
   },
   "2020-08-13": {
     "total_in": 309,
@@ -1678,7 +1678,7 @@
     "delta": 0,
     "deceased": 12,
     "infected": 587,
-    "tests": 18834
+    "tests": 18833
   },
   "2020-08-15": {
     "total_in": 309,
@@ -1710,8 +1710,8 @@
     "out": 9,
     "delta": 5,
     "deceased": 7,
-    "infected": 705,
-    "tests": 17836
+    "infected": 707,
+    "tests": 18032
   },
   "2020-08-18": {
     "total_in": 335,
@@ -1722,7 +1722,7 @@
     "delta": -14,
     "deceased": 12,
     "infected": 727,
-    "tests": 26782
+    "tests": 26793
   },
   "2020-08-19": {
     "total_in": 334,
@@ -1732,8 +1732,8 @@
     "out": 30,
     "delta": 5,
     "deceased": 9,
-    "infected": 599,
-    "tests": 23001
+    "infected": 615,
+    "tests": 23020
   },
   "2020-08-20": {
     "total_in": 303,
@@ -1743,8 +1743,8 @@
     "out": 53,
     "delta": -28,
     "deceased": 4,
-    "infected": 545,
-    "tests": 24145
+    "infected": 575,
+    "tests": 24216
   },
   "2020-08-21": {
     "total_in": 314,
@@ -1754,8 +1754,8 @@
     "out": 34,
     "delta": -7,
     "deceased": 3,
-    "infected": 440,
-    "tests": 20447
+    "infected": 488,
+    "tests": 20769
   },
   "2020-08-22": {
     "total_in": 310,
@@ -1765,8 +1765,8 @@
     "out": 39,
     "delta": -17,
     "deceased": 5,
-    "infected": 131,
-    "tests": 14062
+    "infected": 186,
+    "tests": 15406
   },
   "2020-08-23": {
     "total_in": 312,
@@ -1775,9 +1775,9 @@
     "in": 16,
     "out": 21,
     "delta": -5,
-    "deceased": 2,
-    "infected": 28,
-    "tests": 7221
+    "deceased": 3,
+    "infected": 107,
+    "tests": 8563
   },
   "2020-08-24": {
     "total_in": 320,
@@ -1786,7 +1786,17 @@
     "in": 16,
     "out": 17,
     "delta": -1,
-    "deceased": 3,
-    "tests": 162
+    "deceased": 5,
+    "infected": 121,
+    "tests": 14342
+  },
+  "2020-08-25": {
+    "total_in": 282,
+    "total_icu": 85,
+    "total_resp": 45,
+    "in": 12,
+    "out": 49,
+    "delta": -37,
+    "tests": 544
   }
 }
