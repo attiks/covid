@@ -100,7 +100,10 @@
       color: #000099;
     }
 
-
+    #canvas {
+      max-height: 80vh;
+    }
+    
     .info p {
       text-align: center;
     }
@@ -183,6 +186,8 @@ window.onload = function() {
     var lastInfected = 0;
     var lastInfected7 = [];
     var lastInfected7Average = 0;
+    var lastInfected14 = [];
+    var lastInfected14Average = 0;
 
     var maxDelta = 0;
 
@@ -201,6 +206,8 @@ window.onload = function() {
     var dataPointsTests = [];
     var dataPointsInfected = [];
     var dataPointsInfectedDaily = [];
+    var dataPointsInfectedDaily7 = [];
+    var dataPointsInfectedDaily14 = [];
     var dataPointsTestsInfected = [];
 
     for (var row in data) {
@@ -266,13 +273,27 @@ window.onload = function() {
       lastTests = data[row].tests;
       lastInfected = data[row].infected ? data[row].infected : 0;
 
+      dataPointsInfectedDaily.push({
+        x: new Date(row),
+        y: lastInfected
+      });
+
       lastInfected7.push(lastInfected);
       lastInfected7 = lastInfected7.slice(Math.max(lastInfected7.length - 7, 0));
       lastInfected7Average = Math.round(lastInfected7.reduce((a, b) => a + b, 0) / lastInfected7.length);
 
-      dataPointsInfectedDaily.push({
+      dataPointsInfectedDaily7.push({
         x: new Date(row),
         y: lastInfected7Average
+      });
+
+      lastInfected14.push(lastInfected);
+      lastInfected14 = lastInfected14.slice(Math.max(lastInfected14.length - 14, 0));
+      lastInfected14Average = Math.round(lastInfected14.reduce((a, b) => a + b, 0) / lastInfected14.length);
+
+      dataPointsInfectedDaily14.push({
+        x: new Date(row),
+        y: lastInfected14Average
       });
 
       totalIn += data[row].in;
@@ -309,6 +330,17 @@ window.onload = function() {
           hidden: false
         },
         {
+          label: 'People infected',
+          type: 'line',
+          backgroundColor: '#999900',
+          borderColor: '#996600',
+          borderWidth: 1,
+          fill: false,
+          yAxisID: 'y-axis-1',
+          data: dataPointsInfectedDaily,
+          hidden: true
+        },
+        {
           label: 'People infected (7d gem.)',
           type: 'bar',
           backgroundColor: '#999900',
@@ -316,8 +348,19 @@ window.onload = function() {
           borderWidth: 1,
           fill: false,
           yAxisID: 'y-axis-1',
-          data: dataPointsInfectedDaily,
+          data: dataPointsInfectedDaily7,
           hidden: false
+        },
+        {
+          label: 'People infected (14d gem.)',
+          type: 'line',
+          backgroundColor: '#999900',
+          borderColor: '#99cc00',
+          borderWidth: 1,
+          fill: false,
+          yAxisID: 'y-axis-1',
+          data: dataPointsInfectedDaily14,
+          hidden: true
         },
         {
           label: 'People in/out',
