@@ -144,10 +144,10 @@
   </div>
 
   <div class="buttons">
-    <button data-series="0,1,2" data-state="on">Toggle In/Out</button>
-    <button data-series="4,5" data-state="off">Toggle Hospital</button>
-    <button data-series="6" data-state="off">Toggle Deceased</button>
-    <button data-series="7,8" data-state="off">Toggle Tested/Infected</button>
+    <button data-series="0,1,3" data-state="on">Toggle In/Out</button>
+    <button data-series="7" data-state="off">Toggle Hospital</button>
+    <button data-series="9" data-state="off">Toggle Deceased</button>
+    <button data-series="9,10,11" data-state="off">Toggle Tested/Infected</button>
   </div>
 
   <div class="chart-container">
@@ -653,7 +653,7 @@ window.onload = function() {
 
     for (var i = 0; i < datasets.length; i++) {
       let dataset = datasets[i];
-      if (dataset.hidden) {
+      if (!chart.isDatasetVisible(i)) {
         continue;
       }
 
