@@ -472,11 +472,12 @@ window.onload = function() {
           xAxes: [{
             type: 'time',
             time: {
+              distribution: 'linear',
               unit: 'day',
-              distribution: 'linear'
+              unitStepSize: 7,
             },
             ticks: {
-              min: ''
+              source: 'auto'
             }
           }],
           yAxes: [
@@ -641,6 +642,7 @@ window.onload = function() {
     let maxY = getMax(window.myChart, startDate);
 
     window.myChart.options.scales.xAxes[0].ticks.min = formatDate(startDate);
+    window.myChart.options.scales.xAxes[0].time.unitStepSize = Math.max(1, Math.floor(days / 14));
     if (maxY > 0) {
       window.myChart.options.scales.yAxes[0].ticks.max = maxY * 1.05;
     }
