@@ -2151,7 +2151,7 @@
     "delta": -11,
     "deceased": 6,
     "infected": 942,
-    "tests": 33415
+    "tests": 33417
   },
   "2020-09-27": {
     "total_in": 654,
@@ -2162,7 +2162,7 @@
     "delta": 17,
     "deceased": 12,
     "infected": 538,
-    "tests": 20307
+    "tests": 20310
   },
   "2020-09-28": {
     "total_in": 708,
@@ -2183,7 +2183,7 @@
     "out": 85,
     "delta": -1,
     "deceased": 9,
-    "infected": 2977,
+    "infected": 2978,
     "tests": 47799
   },
   "2020-09-30": {
@@ -2205,7 +2205,7 @@
     "out": 67,
     "delta": 20,
     "deceased": 15,
-    "infected": 3325,
+    "infected": 3327,
     "tests": 41520
   },
   "2020-10-02": {
@@ -2216,7 +2216,7 @@
     "out": 50,
     "delta": 16,
     "deceased": 11,
-    "infected": 3617,
+    "infected": 3625,
     "tests": 41632
   },
   "2020-10-03": {
@@ -2227,7 +2227,7 @@
     "out": 74,
     "delta": -1,
     "deceased": 16,
-    "infected": 1632,
+    "infected": 1640,
     "tests": 34151
   },
   "2020-10-04": {
@@ -2238,7 +2238,7 @@
     "out": 34,
     "delta": 52,
     "deceased": 14,
-    "infected": 1029,
+    "infected": 1030,
     "tests": 17950
   },
   "2020-10-05": {
@@ -2249,7 +2249,7 @@
     "out": 33,
     "delta": 54,
     "deceased": 14,
-    "infected": 4601,
+    "infected": 5022,
     "tests": 26668
   },
   "2020-10-06": {
@@ -2260,8 +2260,8 @@
     "out": 93,
     "delta": 11,
     "deceased": 18,
-    "infected": 3323,
-    "tests": 44912
+    "infected": 5048,
+    "tests": 44920
   },
   "2020-10-07": {
     "total_in": 1050,
@@ -2270,9 +2270,9 @@
     "in": 132,
     "out": 83,
     "delta": 49,
-    "deceased": 15,
-    "infected": 407,
-    "tests": 41795
+    "deceased": 20,
+    "infected": 3159,
+    "tests": 53745
   },
   "2020-10-08": {
     "total_in": 1110,
@@ -2281,7 +2281,18 @@
     "in": 124,
     "out": 86,
     "delta": 38,
-    "deceased": 2,
-    "tests": 10
+    "deceased": 18,
+    "infected": 467,
+    "tests": 37915
+  },
+  "2020-10-09": {
+    "total_in": 1188,
+    "total_icu": 212,
+    "total_resp": 97,
+    "in": 141,
+    "out": 91,
+    "delta": 50,
+    "deceased": 4,
+    "tests": 1
   }
 }
