@@ -2151,7 +2151,7 @@
     "delta": -11,
     "deceased": 6,
     "infected": 942,
-    "tests": 33418
+    "tests": 33420
   },
   "2020-09-27": {
     "total_in": 654,
@@ -2194,7 +2194,7 @@
     "out": 68,
     "delta": 16,
     "deceased": 6,
-    "infected": 3231,
+    "infected": 3232,
     "tests": 46157
   },
   "2020-10-01": {
@@ -2227,8 +2227,8 @@
     "out": 74,
     "delta": -1,
     "deceased": 16,
-    "infected": 1640,
-    "tests": 34176
+    "infected": 1643,
+    "tests": 34177
   },
   "2020-10-04": {
     "total_in": 866,
@@ -2239,7 +2239,7 @@
     "delta": 52,
     "deceased": 14,
     "infected": 1030,
-    "tests": 17952
+    "tests": 17953
   },
   "2020-10-05": {
     "total_in": 937,
@@ -2249,7 +2249,7 @@
     "out": 33,
     "delta": 54,
     "deceased": 14,
-    "infected": 5076,
+    "infected": 5088,
     "tests": 26681
   },
   "2020-10-06": {
@@ -2260,8 +2260,8 @@
     "out": 93,
     "delta": 11,
     "deceased": 18,
-    "infected": 5456,
-    "tests": 44934
+    "infected": 5517,
+    "tests": 44936
   },
   "2020-10-07": {
     "total_in": 1050,
@@ -2271,7 +2271,7 @@
     "out": 83,
     "delta": 49,
     "deceased": 20,
-    "infected": 6083,
+    "infected": 6505,
     "tests": 53924
   },
   "2020-10-08": {
@@ -2282,8 +2282,8 @@
     "out": 86,
     "delta": 38,
     "deceased": 20,
-    "infected": 4022,
-    "tests": 49014
+    "infected": 5661,
+    "tests": 49015
   },
   "2020-10-09": {
     "total_in": 1189,
@@ -2293,8 +2293,8 @@
     "out": 91,
     "delta": 51,
     "deceased": 18,
-    "infected": 980,
-    "tests": 51467
+    "infected": 3566,
+    "tests": 52632
   },
   "2020-10-10": {
     "total_in": 1257,
@@ -2303,8 +2303,19 @@
     "in": 160,
     "out": 130,
     "delta": 30,
-    "deceased": 8,
-    "infected": 20,
-    "tests": 3876
+    "deceased": 17,
+    "infected": 618,
+    "tests": 45887
+  },
+  "2020-10-11": {
+    "total_in": 1329,
+    "total_icu": 243,
+    "total_resp": 109,
+    "in": 130,
+    "out": 70,
+    "delta": 60,
+    "deceased": 7,
+    "infected": 5,
+    "tests": 1934
   }
 }
