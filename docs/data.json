@@ -2293,7 +2293,7 @@
     "out": 91,
     "delta": 51,
     "deceased": 19,
-    "infected": 7774,
+    "infected": 7775,
     "tests": 53427
   },
   "2020-10-10": {
@@ -2315,7 +2315,7 @@
     "out": 71,
     "delta": 60,
     "deceased": 25,
-    "infected": 2408,
+    "infected": 2407,
     "tests": 30346
   },
   "2020-10-12": {
@@ -2326,7 +2326,7 @@
     "out": 52,
     "delta": 113,
     "deceased": 36,
-    "infected": 9437,
+    "infected": 9471,
     "tests": 44505
   },
   "2020-10-13": {
@@ -2337,7 +2337,7 @@
     "out": 127,
     "delta": 84,
     "deceased": 34,
-    "infected": 11737,
+    "infected": 12051,
     "tests": 59235
   },
   "2020-10-14": {
@@ -2348,7 +2348,7 @@
     "out": 135,
     "delta": 120,
     "deceased": 42,
-    "infected": 9579,
+    "infected": 10932,
     "tests": 72298
   },
   "2020-10-15": {
@@ -2359,8 +2359,8 @@
     "out": 133,
     "delta": 151,
     "deceased": 34,
-    "infected": 5938,
-    "tests": 65074
+    "infected": 8216,
+    "tests": 65075
   },
   "2020-10-16": {
     "total_in": 2098,
@@ -2370,18 +2370,29 @@
     "out": 147,
     "delta": 93,
     "deceased": 29,
-    "infected": 2083,
-    "tests": 65582
+    "infected": 6266,
+    "tests": 66169
   },
   "2020-10-17": {
-    "total_in": 2255,
-    "total_icu": 381,
+    "total_in": 2261,
+    "total_icu": 383,
     "total_resp": 181,
     "in": 351,
-    "out": 207,
-    "delta": 144,
-    "deceased": 3,
-    "infected": 37,
-    "tests": 8672
+    "out": 208,
+    "delta": 143,
+    "deceased": 20,
+    "infected": 979,
+    "tests": 60120
+  },
+  "2020-10-18": {
+    "total_in": 2485,
+    "total_icu": 412,
+    "total_resp": 195,
+    "in": 257,
+    "out": 83,
+    "delta": 174,
+    "deceased": 4,
+    "infected": 34,
+    "tests": 5794
   }
 }
