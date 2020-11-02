@@ -511,7 +511,10 @@ window.onload = function() {
                 visibleDatasets.push(i);
               }
             }
-            let url = '?visible-datasets=' + visibleDatasets.join(',');
+
+            params = new URLSearchParams(window.location.search);
+            params.set('visible-datasets', visibleDatasets.join(','));
+            let url = '?' + params.toString();
             window.history.replaceState({}, null, url);
           }
         },
@@ -807,6 +810,10 @@ window.onload = function() {
         checkAllAxisVisibility(window.myChart);
         window.myChart.update();
       }
+
+      if (params.has('last-days')) {
+        zoomLastDays(parseInt(params.get('last-days'), 10));
+      }
     }
   }
 
@@ -882,6 +889,15 @@ window.onload = function() {
   buttons.forEach(b => b.addEventListener('click', function(event) {
     let button = event.target;
     let days = button.getAttribute('data-days');
+    zoomLastDays(days);
+
+    params = new URLSearchParams(window.location.search);
+    params.set('last-days', days);
+    let url = '?' + params.toString();
+    window.history.replaceState({}, null, url);
+  }));
+
+  var zoomLastDays = function(days) {
     let endDate = Date.now() - 86400000;
     let startDate = endDate - days * 86400000;
     let maxY = getMax(window.myChart, startDate);
@@ -892,7 +908,7 @@ window.onload = function() {
       window.myChart.options.scales.yAxes[0].ticks.max = maxY * 1.05;
     }
     window.myChart.update();
-  }));
+  };
 
   var getMax = function(chart, startDate) {
     let datasets = chart.data.datasets;
