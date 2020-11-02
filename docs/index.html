@@ -501,6 +501,18 @@ window.onload = function() {
 
             // We hid a dataset ... rerender the chart
             ci.update();
+
+            // Set query param.
+            visibleDatasets = [];
+            for (var i = 0; i < ci.data.datasets.length; i++) {
+              let dataset = ci.data.datasets[i];
+
+              if (ci.isDatasetVisible(i)) {
+                visibleDatasets.push(i);
+              }
+            }
+            let url = '?visible-datasets=' + visibleDatasets.join(',');
+            window.history.replaceState({}, null, url);
           }
         },
         title: {
@@ -782,6 +794,20 @@ window.onload = function() {
     // Bind buttons.
     let buttons = document.querySelectorAll('.buttons button');
     buttons.forEach(b => b.addEventListener('click', toggleButton));
+
+    // Set visible datasets.
+    if (window.location.search) {
+      params = new URLSearchParams(window.location.search);
+      if (params.has('visible-datasets')) {
+        indexes = params.get('visible-datasets').split(',');
+        for (var i = 0; i < window.myChart.data.datasets.length; i++) {
+          window.myChart.data.datasets[i].hidden = !indexes.includes(i.toString());
+        }
+
+        checkAllAxisVisibility(window.myChart);
+        window.myChart.update();
+      }
+    }
   }
 
   toggleButton = function(event) {
