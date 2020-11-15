@@ -2095,7 +2095,7 @@
     "out": 18,
     "delta": 40,
     "deceased": 3,
-    "infected": 2202,
+    "infected": 2203,
     "tests": 34932
   },
   "2020-09-22": {
@@ -2139,7 +2139,7 @@
     "out": 61,
     "delta": 11,
     "deceased": 5,
-    "infected": 1622,
+    "infected": 1623,
     "tests": 37845
   },
   "2020-09-26": {
@@ -2151,7 +2151,7 @@
     "delta": -11,
     "deceased": 6,
     "infected": 944,
-    "tests": 33436
+    "tests": 33437
   },
   "2020-09-27": {
     "total_in": 654,
@@ -2173,7 +2173,7 @@
     "delta": 35,
     "deceased": 13,
     "infected": 2782,
-    "tests": 28515
+    "tests": 28517
   },
   "2020-09-29": {
     "total_in": 716,
@@ -2184,7 +2184,7 @@
     "delta": -1,
     "deceased": 10,
     "infected": 2984,
-    "tests": 48115
+    "tests": 48116
   },
   "2020-09-30": {
     "total_in": 739,
@@ -2195,7 +2195,7 @@
     "delta": 16,
     "deceased": 6,
     "infected": 3243,
-    "tests": 46336
+    "tests": 46337
   },
   "2020-10-01": {
     "total_in": 771,
@@ -2217,7 +2217,7 @@
     "delta": 16,
     "deceased": 11,
     "infected": 3720,
-    "tests": 41760
+    "tests": 41762
   },
   "2020-10-03": {
     "total_in": 819,
@@ -2228,7 +2228,7 @@
     "delta": -1,
     "deceased": 15,
     "infected": 1709,
-    "tests": 34229
+    "tests": 34230
   },
   "2020-10-04": {
     "total_in": 866,
@@ -2261,7 +2261,7 @@
     "delta": 11,
     "deceased": 18,
     "infected": 5687,
-    "tests": 45821
+    "tests": 45822
   },
   "2020-10-07": {
     "total_in": 1050,
@@ -2282,8 +2282,8 @@
     "out": 86,
     "delta": 38,
     "deceased": 20,
-    "infected": 6587,
-    "tests": 49859
+    "infected": 6588,
+    "tests": 49861
   },
   "2020-10-09": {
     "total_in": 1189,
@@ -2305,7 +2305,7 @@
     "delta": 30,
     "deceased": 22,
     "infected": 4309,
-    "tests": 47494
+    "tests": 47496
   },
   "2020-10-11": {
     "total_in": 1331,
@@ -2314,9 +2314,9 @@
     "in": 131,
     "out": 71,
     "delta": 60,
-    "deceased": 25,
+    "deceased": 26,
     "infected": 2403,
-    "tests": 30368
+    "tests": 30370
   },
   "2020-10-12": {
     "total_in": 1473,
@@ -2337,8 +2337,8 @@
     "out": 127,
     "delta": 84,
     "deceased": 34,
-    "infected": 12575,
-    "tests": 59518
+    "infected": 12577,
+    "tests": 59520
   },
   "2020-10-14": {
     "total_in": 1778,
@@ -2349,7 +2349,7 @@
     "delta": 120,
     "deceased": 41,
     "infected": 12290,
-    "tests": 72864
+    "tests": 72865
   },
   "2020-10-15": {
     "total_in": 1951,
@@ -2360,7 +2360,7 @@
     "delta": 151,
     "deceased": 35,
     "infected": 11813,
-    "tests": 66008
+    "tests": 66013
   },
   "2020-10-16": {
     "total_in": 2099,
@@ -2370,8 +2370,8 @@
     "out": 147,
     "delta": 93,
     "deceased": 35,
-    "infected": 13475,
-    "tests": 68308
+    "infected": 13476,
+    "tests": 68311
   },
   "2020-10-17": {
     "total_in": 2267,
@@ -2381,8 +2381,8 @@
     "out": 210,
     "delta": 142,
     "deceased": 23,
-    "infected": 7993,
-    "tests": 61791
+    "infected": 7994,
+    "tests": 61793
   },
   "2020-10-18": {
     "total_in": 2497,
@@ -2404,7 +2404,7 @@
     "delta": 206,
     "deceased": 52,
     "infected": 15559,
-    "tests": 55895
+    "tests": 55901
   },
   "2020-10-20": {
     "total_in": 2969,
@@ -2415,7 +2415,7 @@
     "delta": 149,
     "deceased": 51,
     "infected": 19260,
-    "tests": 78266
+    "tests": 78267
   },
   "2020-10-21": {
     "total_in": 3275,
@@ -2425,8 +2425,8 @@
     "out": 242,
     "delta": 181,
     "deceased": 60,
-    "infected": 17481,
-    "tests": 80712
+    "infected": 17483,
+    "tests": 80714
   },
   "2020-10-22": {
     "total_in": 3649,
@@ -2436,8 +2436,8 @@
     "out": 269,
     "delta": 227,
     "deceased": 55,
-    "infected": 17685,
-    "tests": 79780
+    "infected": 17687,
+    "tests": 79782
   },
   "2020-10-23": {
     "total_in": 4057,
@@ -2447,8 +2447,8 @@
     "out": 317,
     "delta": 277,
     "deceased": 94,
-    "infected": 18875,
-    "tests": 68941
+    "infected": 18876,
+    "tests": 68955
   },
   "2020-10-24": {
     "total_in": 4408,
@@ -2458,8 +2458,8 @@
     "out": 351,
     "delta": 242,
     "deceased": 93,
-    "infected": 11554,
-    "tests": 63534
+    "infected": 11556,
+    "tests": 63539
   },
   "2020-10-25": {
     "total_in": 4825,
@@ -2470,7 +2470,7 @@
     "delta": 296,
     "deceased": 94,
     "infected": 4893,
-    "tests": 39461
+    "tests": 39464
   },
   "2020-10-26": {
     "total_in": 5260,
@@ -2480,8 +2480,8 @@
     "out": 169,
     "delta": 358,
     "deceased": 121,
-    "infected": 19858,
-    "tests": 50029
+    "infected": 19862,
+    "tests": 50040
   },
   "2020-10-27": {
     "total_in": 5549,
@@ -2491,8 +2491,8 @@
     "out": 475,
     "delta": 215,
     "deceased": 132,
-    "infected": 22184,
-    "tests": 71392
+    "infected": 22188,
+    "tests": 71396
   },
   "2020-10-28": {
     "total_in": 5924,
@@ -2502,8 +2502,8 @@
     "out": 465,
     "delta": 278,
     "deceased": 140,
-    "infected": 17986,
-    "tests": 78007
+    "infected": 17987,
+    "tests": 78028
   },
   "2020-10-29": {
     "total_in": 6187,
@@ -2513,8 +2513,8 @@
     "out": 474,
     "delta": 199,
     "deceased": 139,
-    "infected": 15079,
-    "tests": 71806
+    "infected": 15082,
+    "tests": 71817
   },
   "2020-10-30": {
     "total_in": 6439,
@@ -2523,9 +2523,9 @@
     "in": 721,
     "out": 463,
     "delta": 258,
-    "deceased": 187,
-    "infected": 15390,
-    "tests": 65785
+    "deceased": 185,
+    "infected": 15395,
+    "tests": 65797
   },
   "2020-10-31": {
     "total_in": 6502,
@@ -2535,8 +2535,8 @@
     "out": 657,
     "delta": 27,
     "deceased": 175,
-    "infected": 6307,
-    "tests": 54479
+    "infected": 6308,
+    "tests": 54572
   },
   "2020-11-01": {
     "total_in": 6824,
@@ -2547,7 +2547,7 @@
     "delta": 305,
     "deceased": 160,
     "infected": 2665,
-    "tests": 24147
+    "tests": 24149
   },
   "2020-11-02": {
     "total_in": 7232,
@@ -2557,8 +2557,8 @@
     "out": 180,
     "delta": 415,
     "deceased": 205,
-    "infected": 13845,
-    "tests": 28868
+    "infected": 13850,
+    "tests": 28921
   },
   "2020-11-03": {
     "total_in": 7489,
@@ -2567,9 +2567,9 @@
     "in": 879,
     "out": 662,
     "delta": 217,
-    "deceased": 168,
-    "infected": 12036,
-    "tests": 54555
+    "deceased": 169,
+    "infected": 12091,
+    "tests": 54829
   },
   "2020-11-04": {
     "total_in": 7407,
@@ -2578,20 +2578,20 @@
     "in": 653,
     "out": 673,
     "delta": -20,
-    "deceased": 192,
-    "infected": 9157,
-    "tests": 44556
+    "deceased": 193,
+    "infected": 9205,
+    "tests": 44919
   },
   "2020-11-05": {
     "total_in": 7290,
     "total_icu": 1428,
     "total_resp": 814,
     "in": 559,
-    "out": 660,
-    "delta": -101,
-    "deceased": 202,
-    "infected": 7628,
-    "tests": 45347
+    "out": 661,
+    "delta": -102,
+    "deceased": 204,
+    "infected": 7646,
+    "tests": 45683
   },
   "2020-11-06": {
     "total_in": 7224,
@@ -2600,9 +2600,9 @@
     "in": 593,
     "out": 626,
     "delta": -33,
-    "deceased": 214,
-    "infected": 6597,
-    "tests": 38987
+    "deceased": 215,
+    "infected": 6637,
+    "tests": 39342
   },
   "2020-11-07": {
     "total_in": 6895,
@@ -2612,8 +2612,8 @@
     "out": 745,
     "delta": -245,
     "deceased": 207,
-    "infected": 3025,
-    "tests": 32187
+    "infected": 3044,
+    "tests": 32346
   },
   "2020-11-08": {
     "total_in": 6955,
@@ -2622,9 +2622,9 @@
     "in": 403,
     "out": 295,
     "delta": 108,
-    "deceased": 204,
-    "infected": 1444,
-    "tests": 13284
+    "deceased": 207,
+    "infected": 1447,
+    "tests": 13290
   },
   "2020-11-09": {
     "total_in": 7221,
@@ -2633,9 +2633,9 @@
     "in": 434,
     "out": 145,
     "delta": 289,
-    "deceased": 185,
-    "infected": 8252,
-    "tests": 21891
+    "deceased": 191,
+    "infected": 8526,
+    "tests": 22273
   },
   "2020-11-10": {
     "total_in": 7058,
@@ -2644,9 +2644,9 @@
     "in": 609,
     "out": 708,
     "delta": -99,
-    "deceased": 163,
-    "infected": 6247,
-    "tests": 38291
+    "deceased": 205,
+    "infected": 7489,
+    "tests": 38762
   },
   "2020-11-11": {
     "total_in": 6879,
@@ -2655,19 +2655,41 @@
     "in": 544,
     "out": 626,
     "delta": -82,
-    "deceased": 121,
-    "infected": 809,
-    "tests": 31251
+    "deceased": 185,
+    "infected": 1932,
+    "tests": 31503
   },
   "2020-11-12": {
     "total_in": 7010,
-    "total_icu": 1452,
+    "total_icu": 1456,
     "total_resp": 902,
-    "in": 399,
-    "out": 242,
-    "delta": 157,
-    "deceased": 19,
-    "infected": 8,
-    "tests": 426
+    "in": 403,
+    "out": 243,
+    "delta": 160,
+    "deceased": 160,
+    "infected": 5675,
+    "tests": 27767
+  },
+  "2020-11-13": {
+    "total_in": 6762,
+    "total_icu": 1457,
+    "total_resp": 897,
+    "in": 509,
+    "out": 661,
+    "delta": -152,
+    "deceased": 134,
+    "infected": 2356,
+    "tests": 36377
+  },
+  "2020-11-14": {
+    "total_in": 6504,
+    "total_icu": 1423,
+    "total_resp": 870,
+    "in": 450,
+    "out": 673,
+    "delta": -223,
+    "deceased": 18,
+    "infected": 5,
+    "tests": 1934
   }
 }
