@@ -200,6 +200,9 @@
         <dd>2020-10-23: Strengere regels</dd>
         <dt>LD3c</dt>
         <dd>2020-11-02: Tweede lockdown</dd>
+
+        <dt>EX3a</dt>
+        <dd>2020-12-01: Niet-essentiele winkels open</dd>
       </dl>
     </details>
     <p>Bugs, errors, questions, improvements, go to <a href="https://github.com/attiks/covid/issues">https://github.com/attiks/covid/issues</a>.</p>
@@ -762,6 +765,18 @@ window.onload = function() {
                 enabled: true,
                 yAdjust: 30,
                 content: 'LD3c'
+              }
+            },
+            {
+              type: 'line',
+              mode: 'vertical',
+              scaleID: 'x-axis-0',
+              value: '2020-12-01',
+              borderColor: 'rgb(75, 192, 192)',
+              borderWidth: 2,
+              label: {
+                enabled: true,
+                content: 'EX3a'
               }
             },
           ]
