@@ -613,6 +613,15 @@ window.onload = function() {
               }
             },
             {
+              type: 'box',
+              mode: 'vertical',
+              xScaleID: 'x-axis-0',
+              backgroundColor: 'rgba(200, 11, 11, 0.3)',
+              xMin: dataPointsInfectedDaily7[dataPointsInfectedDaily7.length - 4].x,
+              xMax: dataPointsInfectedDaily7[dataPointsInfectedDaily7.length - 1].x,
+              drawTime: 'beforeDatasetsDraw'
+            },
+            {
               type: 'line',
               mode: 'vertical',
               scaleID: 'x-axis-0',
