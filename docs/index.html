@@ -603,13 +603,13 @@ window.onload = function() {
               type: 'line',
               mode: 'horizontal',
               scaleID: 'y-axis-1',
-              value: dataPointsInfectedDaily7[dataPointsInfectedDaily7.length - 2].y,
+              value: dataPointsInfectedDaily7[dataPointsInfectedDaily7.length - 4].y,
               borderColor: 'rgb(55, 55, 55)',
               borderWidth: 2,
               borderDash: [2, 2],
               label: {
                 enabled: true,
-                content: '7d - ' + (dataPointsInfectedDaily7[dataPointsInfectedDaily7.length - 2].y).toFixed(0)
+                content: '7d - 4 days ago - ' + (dataPointsInfectedDaily7[dataPointsInfectedDaily7.length - 4].y).toFixed(0)
               }
             },
             {
