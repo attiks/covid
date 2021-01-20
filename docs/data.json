@@ -2679,7 +2679,7 @@
     "delta": -152,
     "deceased": 183,
     "infected": 5710,
-    "tests": 37803
+    "tests": 37804
   },
   "2020-11-14": {
     "total_in": 6505,
@@ -2798,7 +2798,7 @@
     "in": 293,
     "out": 515,
     "delta": -222,
-    "deceased": 122,
+    "deceased": 121,
     "infected": 2877,
     "tests": 42285
   },
@@ -2855,7 +2855,7 @@
     "delta": 4,
     "deceased": 119,
     "infected": 560,
-    "tests": 9627
+    "tests": 9628
   },
   "2020-11-30": {
     "total_in": 4014,
@@ -2932,7 +2932,7 @@
     "delta": 60,
     "deceased": 84,
     "infected": 601,
-    "tests": 10537
+    "tests": 10538
   },
   "2020-12-07": {
     "total_in": 3272,
@@ -3073,7 +3073,7 @@
     "in": 195,
     "out": 271,
     "delta": -76,
-    "deceased": 94,
+    "deceased": 93,
     "infected": 1461,
     "tests": 32931
   },
@@ -3086,7 +3086,7 @@
     "delta": 60,
     "deceased": 89,
     "infected": 655,
-    "tests": 14442
+    "tests": 14444
   },
   "2020-12-21": {
     "total_in": 2610,
@@ -3174,7 +3174,7 @@
     "delta": 79,
     "deceased": 63,
     "infected": 2749,
-    "tests": 29045
+    "tests": 29046
   },
   "2020-12-29": {
     "total_in": 2417,
@@ -3251,7 +3251,7 @@
     "delta": 40,
     "deceased": 59,
     "infected": 3121,
-    "tests": 40220
+    "tests": 40223
   },
   "2021-01-05": {
     "total_in": 2130,
@@ -3262,7 +3262,7 @@
     "delta": -90,
     "deceased": 63,
     "infected": 2822,
-    "tests": 60048
+    "tests": 60049
   },
   "2021-01-06": {
     "total_in": 2076,
@@ -3301,9 +3301,9 @@
     "total_in": 1927,
     "total_icu": 379,
     "total_resp": 205,
-    "in": 135,
+    "in": 134,
     "out": 201,
-    "delta": -66,
+    "delta": -67,
     "deceased": 51,
     "infected": 1387,
     "tests": 37362
@@ -3311,13 +3311,13 @@
   "2021-01-10": {
     "total_in": 1955,
     "total_icu": 371,
-    "total_resp": 203,
+    "total_resp": 204,
     "in": 84,
-    "out": 50,
-    "delta": 34,
+    "out": 49,
+    "delta": 35,
     "deceased": 55,
     "infected": 856,
-    "tests": 22898
+    "tests": 22899
   },
   "2021-01-11": {
     "total_in": 2020,
@@ -3327,8 +3327,8 @@
     "out": 36,
     "delta": 56,
     "deceased": 53,
-    "infected": 3075,
-    "tests": 43975
+    "infected": 3077,
+    "tests": 43980
   },
   "2021-01-12": {
     "total_in": 1960,
@@ -3337,9 +3337,9 @@
     "in": 130,
     "out": 196,
     "delta": -66,
-    "deceased": 50,
-    "infected": 2479,
-    "tests": 67085
+    "deceased": 51,
+    "infected": 2480,
+    "tests": 67096
   },
   "2021-01-13": {
     "total_in": 1937,
@@ -3350,7 +3350,7 @@
     "delta": -26,
     "deceased": 42,
     "infected": 2207,
-    "tests": 56827
+    "tests": 56831
   },
   "2021-01-14": {
     "total_in": 1908,
@@ -3360,8 +3360,8 @@
     "out": 176,
     "delta": -48,
     "deceased": 61,
-    "infected": 2086,
-    "tests": 43059
+    "infected": 2094,
+    "tests": 43066
   },
   "2021-01-15": {
     "total_in": 1876,
@@ -3370,9 +3370,9 @@
     "in": 134,
     "out": 150,
     "delta": -16,
-    "deceased": 40,
-    "infected": 2034,
-    "tests": 41906
+    "deceased": 47,
+    "infected": 2049,
+    "tests": 41942
   },
   "2021-01-16": {
     "total_in": 1818,
@@ -3381,9 +3381,9 @@
     "in": 100,
     "out": 166,
     "delta": -66,
-    "deceased": 36,
-    "infected": 1090,
-    "tests": 31784
+    "deceased": 40,
+    "infected": 1154,
+    "tests": 31874
   },
   "2021-01-17": {
     "total_in": 1892,
@@ -3392,9 +3392,9 @@
     "in": 77,
     "out": 22,
     "delta": 55,
-    "deceased": 25,
-    "infected": 416,
-    "tests": 16299
+    "deceased": 41,
+    "infected": 688,
+    "tests": 16446
   },
   "2021-01-18": {
     "total_in": 1974,
@@ -3403,7 +3403,19 @@
     "in": 98,
     "out": 29,
     "delta": 69,
-    "deceased": 7,
-    "tests": 484
+    "deceased": 49,
+    "infected": 1116,
+    "tests": 35840
+  },
+  "2021-01-19": {
+    "total_in": 1960,
+    "total_icu": 360,
+    "total_resp": 198,
+    "in": 183,
+    "out": 190,
+    "delta": -7,
+    "deceased": 14,
+    "infected": 1,
+    "tests": 1582
   }
 }
