@@ -104,6 +104,10 @@
       max-height: 80vh;
     }
 
+    #canvas-ratio {
+      max-height: 50vh;
+    }
+
     .info p {
       text-align: center;
     }
@@ -153,13 +157,26 @@
   <div class="chart-container">
     <canvas id="canvas"></canvas>
     <div class="zoom-buttons">
-      <button id="reset-zoom">Reset zoom</button>
-      <button data-days="7" class="button--last-x">Last 7 days</button>
-      <button data-days="14" class="button--last-x">Last 14 days</button>
-      <button data-days="30" class="button--last-x">Last 30 days</button>
-      <button data-days="60" class="button--last-x">Last 60 days</button>
-      <button data-days="90" class="button--last-x">Last 90 days</button>
-      <button data-days="120" class="button--last-x">Last 120 days</button>
+      <button data-chart="mainChart" class="button--reset-zoom">Reset zoom</button>
+      <button data-chart="mainChart" data-days="7" class="button--last-x">Last 7 days</button>
+      <button data-chart="mainChart" data-days="14" class="button--last-x">Last 14 days</button>
+      <button data-chart="mainChart" data-days="30" class="button--last-x">Last 30 days</button>
+      <button data-chart="mainChart" data-days="60" class="button--last-x">Last 60 days</button>
+      <button data-chart="mainChart" data-days="90" class="button--last-x">Last 90 days</button>
+      <button data-chart="mainChart" data-days="120" class="button--last-x">Last 120 days</button>
+    </div>
+  </div>
+
+  <div class="chart-container-ratio">
+    <canvas id="canvas-ratio"></canvas>
+    <div class="zoom-buttons">
+      <button data-chart="ratioChart" class="button--reset-zoom">Reset zoom</button>
+      <button data-chart="ratioChart" data-days="7" class="button--last-x">Last 7 days</button>
+      <button data-chart="ratioChart" data-days="14" class="button--last-x">Last 14 days</button>
+      <button data-chart="ratioChart" data-days="30" class="button--last-x">Last 30 days</button>
+      <button data-chart="ratioChart" data-days="60" class="button--last-x">Last 60 days</button>
+      <button data-chart="ratioChart" data-days="90" class="button--last-x">Last 90 days</button>
+      <button data-chart="ratioChart" data-days="120" class="button--last-x">Last 120 days</button>
     </div>
   </div>
 
@@ -229,6 +246,7 @@ window.onload = function() {
     var lastInfected7Average = 0;
     var lastInfected14 = [];
     var lastInfected14Average = 0;
+    var lastPointsTestsInfected7 = [];
 
     var maxDelta = 0;
 
@@ -250,6 +268,7 @@ window.onload = function() {
     var dataPointsInfectedDaily7 = [];
     var dataPointsInfectedDaily14 = [];
     var dataPointsTestsInfected = [];
+    var dataPointsTestsInfected7 = [];
 
     for (var row in data) {
       // Ignore future dates.
@@ -305,6 +324,14 @@ window.onload = function() {
       dataPointsTestsInfected.push({
         x: new Date(row),
         y: (100 * (data[row].infected / data[row].tests)).toFixed(2)
+      });
+
+      lastPointsTestsInfected7.push((100 * (data[row].infected / data[row].tests)));
+      lastPointsTestsInfected7 = lastPointsTestsInfected7.slice(Math.max(lastPointsTestsInfected7.length - 7, 0));
+
+      dataPointsTestsInfected7.push({
+        x: new Date(row),
+        y: (lastPointsTestsInfected7.reduce((a, b) => a + b, 0) / lastPointsTestsInfected7.length).toFixed(2)
       });
 
       lastDate = row;
@@ -482,9 +509,11 @@ window.onload = function() {
     };
 
     var ctx = document.querySelector('.chart-container canvas').getContext('2d');
+    var ctx_ratio = document.querySelector('.chart-container-ratio canvas').getContext('2d');
+
     const ticks = [10, 100, 1000, 5000, 10000, 20000, 40000, 80000];
 
-    window.myChart = new Chart(ctx, {
+    window.mainChart = new Chart(ctx, {
       type: 'bar',
       data: barChartData,
       options: {
@@ -839,6 +868,65 @@ window.onload = function() {
       }
     });
 
+    window.ratioChart = new Chart(ctx_ratio, {
+      type: 'bar',
+      data: {
+        labels: dataLabels,
+        datasets: [
+        {
+            label: 'Infected/Tests (%)',
+            type: 'line',
+            backgroundColor: '#009999',
+            borderColor: '#009999',
+            borderWidth: 1,
+            fill: false,
+            yAxisID: 'y-axis-1',
+            data: dataPointsTestsInfected,
+            hidden: false
+          },
+          {
+            label: 'Infected/Tests (%) 7d',
+            type: 'line',
+            backgroundColor: '#333333',
+            borderColor: '#333333',
+            borderWidth: 1,
+            fill: false,
+            yAxisID: 'y-axis-1',
+            data: dataPointsTestsInfected7,
+            hidden: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        title: {
+          display: false
+        },
+        scales: {
+          xAxes: [{
+            type: 'time',
+            time: {
+              distribution: 'linear',
+              unit: 'day',
+              unitStepSize: 7,
+            },
+            ticks: {
+              source: 'auto'
+            }
+          }],
+          yAxes: [
+            {
+              type: 'linear',
+              beginAtZero: true,
+              display: true,
+              position: 'left',
+              id: 'y-axis-1',
+            }
+          ],
+        }
+      }
+    });
+
     document.querySelector('.total-in .num').innerText = totalIn;
     document.querySelector('.total-out .num').innerText = totalOut;
     document.querySelector('.total-delta .num').innerText = totalIn - totalOut;
@@ -864,16 +952,16 @@ window.onload = function() {
       params = new URLSearchParams(window.location.search);
       if (params.has('visible-datasets')) {
         indexes = params.get('visible-datasets').split(',');
-        for (var i = 0; i < window.myChart.data.datasets.length; i++) {
-          window.myChart.data.datasets[i].hidden = !indexes.includes(i.toString());
+        for (var i = 0; i < window.mainChart.data.datasets.length; i++) {
+          window.mainChart.data.datasets[i].hidden = !indexes.includes(i.toString());
         }
 
-        checkAllAxisVisibility(window.myChart);
-        window.myChart.update();
+        checkAllAxisVisibility(window.mainChart);
+        window.mainChart.update();
       }
 
       if (params.has('last-days')) {
-        zoomLastDays(parseInt(params.get('last-days'), 10));
+        zoomLastDays(parseInt(params.get('last-days'), 10), 'mainChart');
       }
     }
   }
@@ -883,11 +971,11 @@ window.onload = function() {
     let indexes = button.getAttribute('data-series').split(',');
     let state = button.getAttribute('data-state');
 
-    indexes.forEach(i => window.myChart.data.datasets[i].hidden = (state == 'on'));
+    indexes.forEach(i => window.mainChart.data.datasets[i].hidden = (state == 'on'));
 
-    checkAllAxisVisibility(window.myChart);
+    checkAllAxisVisibility(window.mainChart);
 
-    window.myChart.update();
+    window.mainChart.update();
     button.setAttribute('data-state', state == 'off' ? 'on' : 'off');
   }
 
@@ -938,19 +1026,24 @@ window.onload = function() {
     }
   }
 
-  document.getElementById('reset-zoom').addEventListener('click', function () {
-    delete window.myChart.options.scales.xAxes[0].ticks.min;
-    delete window.myChart.options.scales.yAxes[0].ticks.max;
-    window.myChart.update();
-    window.myChart.resetZoom();
-  });
+  let resetButtons = document.querySelectorAll('.button--reset-zoom');
+  resetButtons.forEach(b => b.addEventListener('click', function(event) {
+    let button = event.target;
+    let chartId = button.getAttribute('data-chart');
+
+    delete window[chartId].options.scales.xAxes[0].ticks.min;
+    delete window[chartId].options.scales.yAxes[0].ticks.max;
+    window[chartId].update();
+    window[chartId].resetZoom();
+  }));
 
   // Bind buttons.
   let buttons = document.querySelectorAll('.button--last-x');
   buttons.forEach(b => b.addEventListener('click', function(event) {
     let button = event.target;
     let days = button.getAttribute('data-days');
-    zoomLastDays(days);
+    let chartId = button.getAttribute('data-chart');
+    zoomLastDays(days, chartId);
 
     params = new URLSearchParams(window.location.search);
     params.set('last-days', days);
@@ -958,17 +1051,17 @@ window.onload = function() {
     window.history.replaceState({}, null, url);
   }));
 
-  var zoomLastDays = function(days) {
+  var zoomLastDays = function(days, chartId) {
     let endDate = Date.now() - 86400000;
     let startDate = endDate - days * 86400000;
-    let maxY = getMax(window.myChart, startDate);
+    let maxY = getMax(window[chartId], startDate);
 
-    window.myChart.options.scales.xAxes[0].ticks.min = formatDate(startDate);
-    window.myChart.options.scales.xAxes[0].time.unitStepSize = Math.max(1, Math.floor(days / 14));
+    window[chartId].options.scales.xAxes[0].ticks.min = formatDate(startDate);
+    window[chartId].options.scales.xAxes[0].time.unitStepSize = Math.max(1, Math.floor(days / 14));
     if (maxY > 0) {
-      window.myChart.options.scales.yAxes[0].ticks.max = maxY * 1.05;
+      window[chartId].options.scales.yAxes[0].ticks.max = maxY * 1.05;
     }
-    window.myChart.update();
+    window[chartId].update();
   };
 
   var getMax = function(chart, startDate) {
