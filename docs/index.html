@@ -101,11 +101,11 @@
     }
 
     #canvas {
-      height: 80vh;
+      max-height: 80vh;
     }
 
     #canvas-ratio {
-      height: 40vh;
+      max-height: 60vh;
     }
 
     .info p {
@@ -899,6 +899,7 @@ window.onload = function() {
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         title: {
           display: false
         },
