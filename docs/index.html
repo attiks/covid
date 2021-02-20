@@ -100,11 +100,16 @@
       color: #000099;
     }
 
+    .chart-container {
+      margin: 5rem 0;
+    }
+
     #canvas {
       max-height: 80vh;
     }
 
-    #canvas-ratio {
+    #canvas-ratio,
+    #canvas-hospital {
       max-height: 60vh;
     }
 
@@ -154,7 +159,7 @@
     <button data-series="9,10,11" data-state="off">Toggle Tested/Infected</button>
   </div>
 
-  <div class="chart-container">
+  <div class="chart-container chart-container-full">
     <canvas id="canvas"></canvas>
     <div class="zoom-buttons">
       <button data-chart="mainChart" class="button--reset-zoom">Reset zoom</button>
@@ -167,7 +172,7 @@
     </div>
   </div>
 
-  <div class="chart-container-ratio">
+  <div class="chart-container chart-container-ratio">
     <canvas id="canvas-ratio"></canvas>
     <div class="zoom-buttons">
       <button data-chart="ratioChart" class="button--reset-zoom">Reset zoom</button>
@@ -177,6 +182,19 @@
       <button data-chart="ratioChart" data-days="60" class="button--last-x">Last 60 days</button>
       <button data-chart="ratioChart" data-days="90" class="button--last-x">Last 90 days</button>
       <button data-chart="ratioChart" data-days="120" class="button--last-x">Last 120 days</button>
+    </div>
+  </div>
+
+  <div class="chart-container chart-container-hospital">
+    <canvas id="canvas-hospital"></canvas>
+    <div class="zoom-buttons">
+      <button data-chart="hospitalChart" class="button--reset-zoom">Reset zoom</button>
+      <button data-chart="hospitalChart" data-days="7" class="button--last-x">Last 7 days</button>
+      <button data-chart="hospitalChart" data-days="14" class="button--last-x">Last 14 days</button>
+      <button data-chart="hospitalChart" data-days="30" class="button--last-x">Last 30 days</button>
+      <button data-chart="hospitalChart" data-days="60" class="button--last-x">Last 60 days</button>
+      <button data-chart="hospitalChart" data-days="90" class="button--last-x">Last 90 days</button>
+      <button data-chart="hospitalChart" data-days="120" class="button--last-x">Last 120 days</button>
     </div>
   </div>
 
@@ -508,8 +526,9 @@ window.onload = function() {
       ]
     };
 
-    var ctx = document.querySelector('.chart-container canvas').getContext('2d');
+    var ctx = document.querySelector('.chart-container-full canvas').getContext('2d');
     var ctx_ratio = document.querySelector('.chart-container-ratio canvas').getContext('2d');
+    var ctx_hospital = document.querySelector('.chart-container-hospital canvas').getContext('2d');
 
     const ticks = [10, 100, 1000, 5000, 10000, 20000, 40000, 80000];
 
@@ -901,7 +920,97 @@ window.onload = function() {
         responsive: true,
         maintainAspectRatio: false,
         title: {
-          display: false
+          display: true,
+          text: 'Percentage of infected people'
+        },
+        annotation: {
+          annotations: [
+            {
+              type: 'line',
+              mode: 'horizontal',
+              scaleID: 'y-axis-1',
+              value: '3',
+              borderColor: 'rgb(55, 55, 55)',
+              borderWidth: 3,
+              label: {
+                enabled: true,
+                content: '3% infection ratio'
+              }
+            }
+          ]
+        },        
+        scales: {
+          xAxes: [{
+            type: 'time',
+            time: {
+              distribution: 'linear',
+              unit: 'day',
+              unitStepSize: 7,
+            },
+            ticks: {
+              source: 'auto'
+            }
+          }],
+          yAxes: [
+            {
+              type: 'linear',
+              beginAtZero: true,
+              display: true,
+              position: 'left',
+              id: 'y-axis-1',
+            }
+          ],
+        }
+      }
+    });
+
+    window.hospitalChart = new Chart(ctx_hospital, {
+      type: 'bar',
+      data: {
+        labels: dataLabels,
+        datasets: [
+          {
+            label: 'People In',
+            backgroundColor: '#990000',
+            borderColor: '#990000',
+            borderWidth: 1,
+            yAxisID: 'y-axis-1',
+            data: dataPointsIn,
+            hidden: false
+          },
+          {
+            label: 'People out',
+            backgroundColor: '#009900',
+            borderColor: '#009900',
+            borderWidth: 1,
+            yAxisID: 'y-axis-1',
+            data: dataPointsOut,
+            hidden: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        title: {
+          text: 'People in/out of hospital',
+          display: true
+        },
+        annotation: {
+          annotations: [
+            {
+              type: 'line',
+              mode: 'horizontal',
+              scaleID: 'y-axis-1',
+              value: '75',
+              borderColor: 'rgb(55, 55, 55)',
+              borderWidth: 3,
+              label: {
+                enabled: true,
+                content: '75 opnames'
+              }
+            }
+          ]
         },
         scales: {
           xAxes: [{
