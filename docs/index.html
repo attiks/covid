@@ -334,53 +334,57 @@ window.onload = function() {
         y: data[row].tests + totalTests
       });
 
-      dataPointsInfected.push({
-        x: new Date(row),
-        y: data[row].infected + totalInfected
-      });
-
-      dataPointsTestsInfected.push({
-        x: new Date(row),
-        y: (100 * (data[row].infected / data[row].tests)).toFixed(2)
-      });
-
-      lastPointsTestsInfected7.push((100 * (data[row].infected / data[row].tests)));
-      lastPointsTestsInfected7 = lastPointsTestsInfected7.slice(Math.max(lastPointsTestsInfected7.length - 7, 0));
-
-      dataPointsTestsInfected7.push({
-        x: new Date(row),
-        y: (lastPointsTestsInfected7.reduce((a, b) => a + b, 0) / lastPointsTestsInfected7.length).toFixed(2)
-      });
-
       lastDate = row;
       lastIn = data[row].in;
       lastOut = data[row].out;
       lastDeceased = data[row].deceased || lastDeceased;
       lastTests = data[row].tests;
-      lastInfected = data[row].infected ? data[row].infected : 0;
 
-      dataPointsInfectedDaily.push({
-        x: new Date(row),
-        y: lastInfected
-      });
+      if (data[row].infected) {
+        dataPointsInfected.push({
+          x: new Date(row),
+          y: data[row].infected + totalInfected
+        });
 
-      lastInfected7.push(lastInfected);
-      lastInfected7 = lastInfected7.slice(Math.max(lastInfected7.length - 7, 0));
-      lastInfected7Average = Math.round(lastInfected7.reduce((a, b) => a + b, 0) / lastInfected7.length);
+        dataPointsTestsInfected.push({
+          x: new Date(row),
+          y: (100 * (data[row].infected / data[row].tests)).toFixed(2)
+        });
 
-      dataPointsInfectedDaily7.push({
-        x: new Date(row),
-        y: lastInfected7Average
-      });
+        lastPointsTestsInfected7.push((100 * (data[row].infected / data[row].tests)));
+        lastPointsTestsInfected7 = lastPointsTestsInfected7.slice(Math.max(lastPointsTestsInfected7.length - 7, 0));
 
-      lastInfected14.push(lastInfected);
-      lastInfected14 = lastInfected14.slice(Math.max(lastInfected14.length - 14, 0));
-      lastInfected14Average = Math.round(lastInfected14.reduce((a, b) => a + b, 0) / lastInfected14.length);
+        dataPointsTestsInfected7.push({
+          x: new Date(row),
+          y: (lastPointsTestsInfected7.reduce((a, b) => a + b, 0) / lastPointsTestsInfected7.length).toFixed(2)
+        });
 
-      dataPointsInfectedDaily14.push({
-        x: new Date(row),
-        y: lastInfected14Average
-      });
+        lastInfected = data[row].infected ? data[row].infected : 0;
+
+        dataPointsInfectedDaily.push({
+          x: new Date(row),
+          y: lastInfected
+        });
+
+        lastInfected7.push(lastInfected);
+        lastInfected7 = lastInfected7.slice(Math.max(lastInfected7.length - 7, 0));
+        lastInfected7Average = Math.round(lastInfected7.reduce((a, b) => a + b, 0) / lastInfected7.length);
+
+        dataPointsInfectedDaily7.push({
+          x: new Date(row),
+          y: lastInfected7Average
+        });
+
+        lastInfected14.push(lastInfected);
+        lastInfected14 = lastInfected14.slice(Math.max(lastInfected14.length - 14, 0));
+        lastInfected14Average = Math.round(lastInfected14.reduce((a, b) => a + b, 0) / lastInfected14.length);
+
+        dataPointsInfectedDaily14.push({
+          x: new Date(row),
+          y: lastInfected14Average
+        });
+      }
+
 
       totalIn += data[row].in;
       totalOut += data[row].out;
@@ -938,7 +942,7 @@ window.onload = function() {
               }
             }
           ]
-        },        
+        },
         scales: {
           xAxes: [{
             type: 'time',
@@ -1190,7 +1194,9 @@ window.onload = function() {
 
       dataset.data.forEach(function(d) {
         if (d.x.getTime() > startDate) {
-          max = Math.max(max, d.y);
+          if (d.y !== "NaN") {
+            max = Math.max(max, d.y);
+          }
         }
       }.bind(startDate));
     }
