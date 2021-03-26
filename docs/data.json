@@ -3659,7 +3659,7 @@
     "delta": -29,
     "deceased": 42,
     "infected": 2157,
-    "tests": 49928
+    "tests": 49929
   },
   "2021-02-11": {
     "total_in": 1642,
@@ -3681,7 +3681,7 @@
     "delta": -19,
     "deceased": 43,
     "infected": 2045,
-    "tests": 46458
+    "tests": 46459
   },
   "2021-02-13": {
     "total_in": 1567,
@@ -3801,7 +3801,7 @@
     "out": 179,
     "delta": -24,
     "deceased": 26,
-    "infected": 2918,
+    "infected": 2919,
     "tests": 54890
   },
   "2021-02-24": {
@@ -3868,7 +3868,7 @@
     "delta": 55,
     "deceased": 29,
     "infected": 3243,
-    "tests": 43323
+    "tests": 43325
   },
   "2021-03-02": {
     "total_in": 1902,
@@ -3919,9 +3919,9 @@
     "total_icu": 416,
     "total_resp": 230,
     "in": 141,
-    "out": 173,
-    "delta": -32,
-    "deceased": 24,
+    "out": 172,
+    "delta": -31,
+    "deceased": 25,
     "infected": 1524,
     "tests": 39145
   },
@@ -3956,7 +3956,7 @@
     "delta": -36,
     "deceased": 23,
     "infected": 3419,
-    "tests": 62019
+    "tests": 62021
   },
   "2021-03-10": {
     "total_in": 1943,
@@ -3967,7 +3967,7 @@
     "delta": -2,
     "deceased": 24,
     "infected": 3412,
-    "tests": 55931
+    "tests": 55940
   },
   "2021-03-11": {
     "total_in": 1909,
@@ -3992,15 +3992,15 @@
     "tests": 58172
   },
   "2021-03-13": {
-    "total_in": 1912,
-    "total_icu": 477,
-    "total_resp": 263,
-    "in": 196,
-    "out": 196,
-    "delta": 0,
-    "deceased": 23,
+    "total_in": 1905,
+    "total_icu": 474,
+    "total_resp": 262,
+    "in": 195,
+    "out": 194,
+    "delta": 1,
+    "deceased": 24,
     "infected": 2182,
-    "tests": 45681
+    "tests": 45685
   },
   "2021-03-14": {
     "total_in": 2013,
@@ -4022,7 +4022,7 @@
     "delta": 89,
     "deceased": 25,
     "infected": 5279,
-    "tests": 48928
+    "tests": 48937
   },
   "2021-03-16": {
     "total_in": 2085,
@@ -4032,7 +4032,7 @@
     "out": 230,
     "delta": -22,
     "deceased": 28,
-    "infected": 4600,
+    "infected": 4601,
     "tests": 74218
   },
   "2021-03-17": {
@@ -4043,8 +4043,8 @@
     "out": 192,
     "delta": 15,
     "deceased": 25,
-    "infected": 4837,
-    "tests": 67126
+    "infected": 4838,
+    "tests": 67127
   },
   "2021-03-18": {
     "total_in": 2142,
@@ -4054,8 +4054,8 @@
     "out": 183,
     "delta": 25,
     "deceased": 26,
-    "infected": 5044,
-    "tests": 66500
+    "infected": 5045,
+    "tests": 66505
   },
   "2021-03-19": {
     "total_in": 2153,
@@ -4065,8 +4065,8 @@
     "out": 171,
     "delta": 11,
     "deceased": 31,
-    "infected": 5184,
-    "tests": 73330
+    "infected": 5187,
+    "tests": 73340
   },
   "2021-03-20": {
     "total_in": 2160,
@@ -4077,7 +4077,7 @@
     "delta": 11,
     "deceased": 24,
     "infected": 2839,
-    "tests": 56386
+    "tests": 56390
   },
   "2021-03-21": {
     "total_in": 2249,
@@ -4087,8 +4087,8 @@
     "out": 75,
     "delta": 110,
     "deceased": 24,
-    "infected": 1583,
-    "tests": 27902
+    "infected": 1589,
+    "tests": 27920
   },
   "2021-03-22": {
     "total_in": 2372,
@@ -4098,28 +4098,40 @@
     "out": 77,
     "delta": 124,
     "deceased": 33,
-    "infected": 5941,
-    "tests": 57159
+    "infected": 6220,
+    "tests": 57175
   },
   "2021-03-23": {
-    "total_in": 2401,
+    "total_in": 2402,
     "total_icu": 601,
     "total_resp": 325,
-    "in": 281,
+    "in": 282,
     "out": 236,
-    "delta": 45,
-    "deceased": 21,
-    "infected": 2658,
-    "tests": 85364
+    "delta": 46,
+    "deceased": 24,
+    "infected": 5698,
+    "tests": 86972
   },
   "2021-03-24": {
     "total_in": 2452,
-    "total_icu": 637,
+    "total_icu": 636,
     "total_resp": 332,
     "in": 251,
-    "out": 241,
-    "delta": 10,
-    "deceased": 5,
-    "tests": 2560
+    "out": 242,
+    "delta": 9,
+    "deceased": 27,
+    "infected": 2185,
+    "tests": 78045
+  },
+  "2021-03-25": {
+    "total_in": 2492,
+    "total_icu": 651,
+    "total_resp": 355,
+    "in": 242,
+    "out": 212,
+    "delta": 30,
+    "deceased": 3,
+    "infected": 1,
+    "tests": 1559
   }
 }
