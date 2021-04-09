@@ -238,6 +238,14 @@
 
         <dt>EX3a</dt>
         <dd>2020-12-01: Niet-essentiele winkels open</dd>
+        <dt>EX3b</dt>
+        <dd>2021-02-01: Kappers open</dd>
+        <dt>EX3c</dt>
+        <dd>2021-03-08: Grotere buitenbubbel</dd>
+
+        <dt>LD4</dt>
+        <dd>2021-03-24: Kappers toe</dd>
+        <dd>2021-03-24: Niet-essentiele winkels op afspraak</dd>
       </dl>
     </details>
     <p>Bugs, errors, questions, improvements, go to <a href="https://github.com/attiks/covid/issues">https://github.com/attiks/covid/issues</a>.</p>
@@ -875,6 +883,43 @@ window.onload = function() {
               label: {
                 enabled: true,
                 content: 'EX3a'
+              }
+            },
+            {
+              type: 'line',
+              mode: 'vertical',
+              scaleID: 'x-axis-0',
+              value: '2021-02-01',
+              borderColor: 'rgb(75, 192, 192)',
+              borderWidth: 2,
+              label: {
+                enabled: true,
+                content: 'EX3b'
+              }
+            },
+            {
+              type: 'line',
+              mode: 'vertical',
+              scaleID: 'x-axis-0',
+              value: '2021-03-08',
+              borderColor: 'rgb(75, 192, 192)',
+              borderWidth: 2,
+              label: {
+                enabled: true,
+                content: 'EX3c'
+              }
+            },
+            {
+              type: 'line',
+              mode: 'vertical',
+              scaleID: 'x-axis-0',
+              value: '2021-03-24',
+              borderColor: 'rgb(250, 192, 192)',
+              borderWidth: 2,
+              label: {
+                enabled: true,
+                yAdjust: 30,
+                content: 'LD4'
               }
             },
           ]
