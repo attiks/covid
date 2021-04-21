@@ -1121,6 +1121,8 @@ window.onload = function() {
 
       if (params.has('last-days')) {
         zoomLastDays(parseInt(params.get('last-days'), 10), 'mainChart');
+        zoomLastDays(parseInt(params.get('last-days'), 10), 'ratioChart');
+        zoomLastDays(parseInt(params.get('last-days'), 10), 'hospitalChart');
       }
     }
   }
