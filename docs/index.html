@@ -128,34 +128,34 @@
 <body>
   <div class="totals">
     <div class="total total-in">
-      <p>People In<br><span class='num'></span></p>
-      <span class='last last-7'></span>
-      <span class='last last-0'></span>
+      <p>People In<br><span class="num"></span></p>
+      <span class="last last-7" title="7 days ago"></span>
+      <span class="last last-0" title="Yesterday"></span>
     </div>
     <div class="total total-out">
-      <p>People out<br><span class='num'></span></p>
-      <span class='last last-7'></span>
-      <span class='last last-0'></span>
+      <p>People out<br><span class="num"></span></p>
+      <span class="last last-7" title="7 days ago"></span>
+      <span class="last last-0" title="Yesterday"></span>
     </div>
     <div class="total total-delta">
-      <p>People in hospital (d)<br><span class='num'></span></p>
-      <span class='last last-7'></span>
-      <span class='last last-0'></span>
+      <p>People in hospital (d)<br><span class="num"></span></p>
+      <span class="last last-7" title="7 days ago"></span>
+      <span class="last last-0" title="Yesterday"></span>
     </div>
     <div class="total total-deceased">
-      <p>People deceased<br><span class='num'></span></p>
-      <span class='last last-7'></span>
-      <span class='last last-0'></span>
+      <p>People deceased<br><span class="num"></span></p>
+      <span class="last last-7" title="11 days ago"></span>
+      <span class="last last-0" title="4 days ago"></span>
     </div>
     <div class="total total-tests">
-      <p>People tested<br><span class='num'></span></p>
-      <span class='last last-7'></span>
-      <span class='last last-0'></span>
+      <p>People tested<br><span class="num"></span></p>
+      <span class="last last-7" title="11 days ago"></span>
+      <span class="last last-0" title="4 days ago"></span>
     </div>
     <div class="total total-infected">
-      <p>People infected<br><span class='num'></span></p>
-      <span class='last last-7'></span>
-      <span class='last last-0'></span>
+      <p>People infected<br><span class="num"></span></p>
+      <span class="last last-7" title="11 days ago"></span>
+      <span class="last last-0" title="4 days ago"></span>
     </div>
   </div>
 
@@ -1108,9 +1108,14 @@ window.onload = function() {
     document.querySelector('.total-in .last-0').innerText = (lastIn > 0 ? '+' : '') + lastIn;
     document.querySelector('.total-out .last-0').innerText = (lastOut > 0 ? '+' : '') + lastOut;
     document.querySelector('.total-delta .last-0').innerText = ((lastIn - lastOut) > 0 ? '+' : '') + (lastIn - lastOut);
-    document.querySelector('.total-deceased .last-0').innerText = (lastDeceased > 0 ? '+' : '') + lastDeceased;
-    document.querySelector('.total-tests .last-0').innerText = (lastTests > 0 ? '+' : '') + lastTests;
-    document.querySelector('.total-infected .last-0').innerText = (lastInfected7Average > 0 ? '+' : '') + lastInfected7Average;
+
+
+    let deceased4 = dataPointsDeceased[dataPointsDeceased.length - 4].y - dataPointsDeceased[dataPointsDeceased.length - 5].y;
+    document.querySelector('.total-deceased .last-0').innerText = (deceased4 > 0 ? '+' : '') + deceased4;
+
+    let tested4 = dataPointsTests[dataPointsTests.length - 4].y - dataPointsTests[dataPointsTests.length - 5].y;
+    document.querySelector('.total-tests .last-0').innerText = (tested4 > 0 ? '+' : '') + tested4;
+    document.querySelector('.total-infected .last-0').innerText = (dataPointsInfectedDaily[dataPointsInfectedDaily.length - 4].y > 0 ? '+' : '') + dataPointsInfectedDaily[dataPointsInfectedDaily.length - 5].y;
 
     // Numbers 7 days ago.
     document.querySelector('.total-in .last-7').innerText = (dataPointsIn[dataPointsIn.length - 7].y > 0 ? '+' : '') + dataPointsIn[dataPointsIn.length - 7].y;
@@ -1119,12 +1124,12 @@ window.onload = function() {
     let delta7 = dataPointsIn[dataPointsIn.length - 7].y - dataPointsOut[dataPointsOut.length - 7].y;
     document.querySelector('.total-delta .last-7').innerText = (delta7 > 0 ? '+' : '') + delta7;
 
-    let deceased7 = dataPointsDeceased[dataPointsDeceased.length - 7].y - dataPointsDeceased[dataPointsDeceased.length - 8].y;
-    document.querySelector('.total-deceased .last-7').innerText = (deceased7 > 0 ? '+' : '') + deceased7;
+    let deceased11 = dataPointsDeceased[dataPointsDeceased.length - 11].y - dataPointsDeceased[dataPointsDeceased.length - 12].y;
+    document.querySelector('.total-deceased .last-7').innerText = (deceased11 > 0 ? '+' : '') + deceased11;
 
-    let tested7 = dataPointsTests[dataPointsTests.length - 7].y - dataPointsTests[dataPointsTests.length - 8].y;
-    document.querySelector('.total-tests .last-7').innerText = (tested7 > 0 ? '+' : '') + tested7;
-    document.querySelector('.total-infected .last-7').innerText = (dataPointsInfectedDaily[dataPointsInfectedDaily.length - 7].y > 0 ? '+' : '') + dataPointsInfectedDaily[dataPointsInfectedDaily.length - 7].y;
+    let tested11 = dataPointsTests[dataPointsTests.length - 11].y - dataPointsTests[dataPointsTests.length - 12].y;
+    document.querySelector('.total-tests .last-7').innerText = (tested11 > 0 ? '+' : '') + tested11;
+    document.querySelector('.total-infected .last-7').innerText = (dataPointsInfectedDaily[dataPointsInfectedDaily.length - 11].y > 0 ? '+' : '') + dataPointsInfectedDaily[dataPointsInfectedDaily.length - 11].y;
 
     document.querySelector('.info .end-date').innerText = endDate;
 
