@@ -6802,11 +6802,11 @@
     "tests": 117087
   },
   "2021-11-24": {
-    "total_in": 3397,
-    "total_icu": 686,
+    "total_in": 3398,
+    "total_icu": 659,
     "total_resp": 367,
-    "in": 335,
-    "out": 330,
+    "in": 336,
+    "out": 331,
     "delta": 5,
     "deceased": 7,
     "infected": 8,
