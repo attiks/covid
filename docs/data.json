@@ -6909,7 +6909,7 @@
     "delta": -106,
     "deceased": 48,
     "infected": 17769,
-    "tests": 122646
+    "tests": 122647
   },
   "2021-12-04": {
     "total_in": 3534,
@@ -9493,7 +9493,7 @@
     "out": 442,
     "delta": -254,
     "deceased": 16,
-    "infected": 4981,
+    "infected": 4982,
     "tests": 17221
   },
   "2022-07-27": {
@@ -9516,7 +9516,7 @@
     "delta": -149,
     "deceased": 9,
     "infected": 3873,
-    "tests": 14272
+    "tests": 14274
   },
   "2022-07-29": {
     "total_in": 1901,
@@ -9956,7 +9956,7 @@
     "delta": -66,
     "deceased": 7,
     "infected": 1944,
-    "tests": 10931
+    "tests": 10932
   },
   "2022-09-07": {
     "total_in": 757,
@@ -10011,7 +10011,7 @@
     "delta": -3,
     "deceased": 8,
     "infected": 467,
-    "tests": 3204
+    "tests": 3205
   },
   "2022-09-12": {
     "total_in": 709,
@@ -10066,7 +10066,7 @@
     "delta": -40,
     "deceased": 2,
     "infected": 1897,
-    "tests": 11660
+    "tests": 11661
   },
   "2022-09-17": {
     "total_in": 667,
@@ -10109,7 +10109,7 @@
     "delta": -26,
     "deceased": 4,
     "infected": 2762,
-    "tests": 17069
+    "tests": 17070
   },
   "2022-09-21": {
     "total_in": 725,
@@ -10120,7 +10120,7 @@
     "delta": -28,
     "deceased": 4,
     "infected": 2761,
-    "tests": 14325
+    "tests": 14326
   },
   "2022-09-22": {
     "total_in": 741,
@@ -10130,8 +10130,8 @@
     "out": 107,
     "delta": -21,
     "deceased": 3,
-    "infected": 2680,
-    "tests": 13181
+    "infected": 2682,
+    "tests": 13182
   },
   "2022-09-23": {
     "total_in": 756,
@@ -10142,7 +10142,7 @@
     "delta": -22,
     "deceased": 5,
     "infected": 2448,
-    "tests": 13743
+    "tests": 13745
   },
   "2022-09-24": {
     "total_in": 800,
@@ -10152,8 +10152,8 @@
     "out": 92,
     "delta": 7,
     "deceased": 4,
-    "infected": 1215,
-    "tests": 7787
+    "infected": 1216,
+    "tests": 7788
   },
   "2022-09-25": {
     "total_in": 847,
@@ -10162,9 +10162,9 @@
     "in": 46,
     "out": 35,
     "delta": 11,
-    "deceased": 2,
-    "infected": 651,
-    "tests": 3381
+    "deceased": 3,
+    "infected": 652,
+    "tests": 3382
   },
   "2022-09-26": {
     "total_in": 928,
@@ -10173,9 +10173,9 @@
     "in": 70,
     "out": 50,
     "delta": 20,
-    "deceased": 5,
-    "infected": 4782,
-    "tests": 15811
+    "deceased": 6,
+    "infected": 4789,
+    "tests": 15823
   },
   "2022-09-27": {
     "total_in": 978,
@@ -10185,29 +10185,73 @@
     "out": 142,
     "delta": -40,
     "deceased": 3,
-    "infected": 3485,
-    "tests": 17749
+    "infected": 3501,
+    "tests": 17761
   },
   "2022-09-28": {
-    "total_in": 1040,
+    "total_in": 1041,
     "total_icu": 52,
     "total_resp": 17,
-    "in": 100,
-    "out": 127,
+    "in": 101,
+    "out": 128,
     "delta": -27,
     "deceased": 5,
-    "infected": 2601,
-    "tests": 15780
+    "infected": 3364,
+    "tests": 15930
   },
   "2022-09-29": {
-    "total_in": 1080,
-    "total_icu": 50,
+    "total_in": 1083,
+    "total_icu": 51,
     "total_resp": 20,
-    "in": 100,
+    "in": 102,
     "out": 124,
-    "delta": -24,
-    "deceased": 0,
-    "infected": 6,
-    "tests": 144
+    "delta": -22,
+    "deceased": 3,
+    "infected": 3353,
+    "tests": 14653
+  },
+  "2022-09-30": {
+    "total_in": 1174,
+    "total_icu": 53,
+    "total_resp": 18,
+    "in": 116,
+    "out": 96,
+    "delta": 20,
+    "deceased": 3,
+    "infected": 2885,
+    "tests": 13871
+  },
+  "2022-10-01": {
+    "total_in": 1160,
+    "total_icu": 59,
+    "total_resp": 17,
+    "in": 99,
+    "out": 162,
+    "delta": -63,
+    "deceased": 4,
+    "infected": 1324,
+    "tests": 7583
+  },
+  "2022-10-02": {
+    "total_in": 1231,
+    "total_icu": 63,
+    "total_resp": 18,
+    "in": 61,
+    "out": 49,
+    "delta": 12,
+    "deceased": 4,
+    "infected": 472,
+    "tests": 3696
+  },
+  "2022-10-03": {
+    "total_in": 1294,
+    "total_icu": 74,
+    "total_resp": 20,
+    "in": 79,
+    "out": 85,
+    "delta": -6,
+    "deceased": 1,
+    "infected": 9,
+    "tests": 156
   }
 }
