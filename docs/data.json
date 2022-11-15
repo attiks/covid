@@ -10450,7 +10450,7 @@
     "out": 176,
     "delta": -66,
     "deceased": 7,
-    "infected": 1583,
+    "infected": 1584,
     "tests": 9298
   },
   "2022-10-22": {
@@ -10583,7 +10583,7 @@
     "delta": -33,
     "deceased": 5,
     "infected": 1120,
-    "tests": 7118
+    "tests": 7120
   },
   "2022-11-03": {
     "total_in": 902,
@@ -10637,8 +10637,8 @@
     "out": 49,
     "delta": -8,
     "deceased": 4,
-    "infected": 1319,
-    "tests": 8073
+    "infected": 1320,
+    "tests": 8078
   },
   "2022-11-08": {
     "total_in": 798,
@@ -10648,8 +10648,8 @@
     "out": 170,
     "delta": -109,
     "deceased": 4,
-    "infected": 900,
-    "tests": 8244
+    "infected": 908,
+    "tests": 8252
   },
   "2022-11-09": {
     "total_in": 796,
@@ -10659,18 +10659,62 @@
     "out": 117,
     "delta": -36,
     "deceased": 4,
-    "infected": 630,
-    "tests": 6886
+    "infected": 800,
+    "tests": 6948
   },
   "2022-11-10": {
-    "total_in": 812,
+    "total_in": 810,
     "total_icu": 46,
     "total_resp": 20,
     "in": 68,
-    "out": 93,
-    "delta": -25,
-    "deceased": 0,
-    "infected": 8,
-    "tests": 141
+    "out": 97,
+    "delta": -29,
+    "deceased": 3,
+    "infected": 695,
+    "tests": 5979
+  },
+  "2022-11-11": {
+    "total_in": 776,
+    "total_icu": 51,
+    "total_resp": 16,
+    "in": 47,
+    "out": 108,
+    "delta": -61,
+    "deceased": 6,
+    "infected": 187,
+    "tests": 3108
+  },
+  "2022-11-12": {
+    "total_in": 757,
+    "total_icu": 55,
+    "total_resp": 16,
+    "in": 40,
+    "out": 44,
+    "delta": -4,
+    "deceased": 6,
+    "infected": 318,
+    "tests": 3698
+  },
+  "2022-11-13": {
+    "total_in": 780,
+    "total_icu": 58,
+    "total_resp": 16,
+    "in": 25,
+    "out": 38,
+    "delta": -13,
+    "deceased": 7,
+    "infected": 153,
+    "tests": 2622
+  },
+  "2022-11-14": {
+    "total_in": 790,
+    "total_icu": 54,
+    "total_resp": 16,
+    "in": 49,
+    "out": 65,
+    "delta": -16,
+    "deceased": 2,
+    "infected": 3,
+    "tests": 157
   }
 }
