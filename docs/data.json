@@ -8051,7 +8051,7 @@
     "in": 169,
     "out": 315,
     "delta": -146,
-    "deceased": 22,
+    "deceased": 23,
     "infected": 11318,
     "tests": 42406
   },
@@ -10572,7 +10572,7 @@
     "delta": -120,
     "deceased": 3,
     "infected": 214,
-    "tests": 3151
+    "tests": 3152
   },
   "2022-11-02": {
     "total_in": 963,
@@ -10978,7 +10978,7 @@
     "delta": -44,
     "deceased": 5,
     "infected": 1611,
-    "tests": 10201
+    "tests": 10202
   },
   "2022-12-09": {
     "total_in": 1272,
@@ -11341,7 +11341,7 @@
     "delta": -133,
     "deceased": 10,
     "infected": 489,
-    "tests": 7236
+    "tests": 7237
   },
   "2023-01-11": {
     "total_in": 1031,
@@ -11658,8 +11658,8 @@
     "out": 116,
     "delta": -31,
     "deceased": 6,
-    "infected": 1004,
-    "tests": 6322
+    "infected": 1005,
+    "tests": 6323
   },
   "2023-02-09": {
     "total_in": 974,
@@ -11670,7 +11670,7 @@
     "delta": -63,
     "deceased": 6,
     "infected": 1085,
-    "tests": 6478
+    "tests": 6479
   },
   "2023-02-10": {
     "total_in": 1011,
@@ -11703,7 +11703,7 @@
     "delta": 19,
     "deceased": 7,
     "infected": 342,
-    "tests": 2634
+    "tests": 2635
   },
   "2023-02-13": {
     "total_in": 1164,
@@ -11747,7 +11747,7 @@
     "delta": -50,
     "deceased": 7,
     "infected": 1495,
-    "tests": 7581
+    "tests": 7582
   },
   "2023-02-17": {
     "total_in": 1295,
@@ -11885,165 +11885,242 @@
     "total_in": 1758,
     "total_icu": 77,
     "total_resp": 17,
-    "in": 171,
+    "in": 172,
     "out": 253,
-    "delta": -82,
+    "delta": -81,
     "deceased": 12,
     "infected": 1757,
-    "tests": 7154
+    "tests": 7155
   },
   "2023-03-02": {
-    "total_in": 1719,
+    "total_in": 1715,
     "total_icu": 78,
     "total_resp": 16,
     "in": 134,
-    "out": 220,
-    "delta": -86,
+    "out": 225,
+    "delta": -91,
     "deceased": 5,
     "infected": 1792,
     "tests": 6792
   },
   "2023-03-03": {
-    "total_in": 1730,
-    "total_icu": 79,
+    "total_in": 1726,
+    "total_icu": 80,
     "total_resp": 14,
     "in": 132,
     "out": 208,
     "delta": -76,
-    "deceased": 5,
+    "deceased": 6,
     "infected": 1686,
     "tests": 6811
   },
   "2023-03-04": {
-    "total_in": 1699,
+    "total_in": 1700,
     "total_icu": 87,
     "total_resp": 21,
     "in": 147,
-    "out": 238,
-    "delta": -91,
+    "out": 241,
+    "delta": -94,
     "deceased": 5,
     "infected": 669,
     "tests": 3942
   },
   "2023-03-05": {
-    "total_in": 1783,
-    "total_icu": 94,
+    "total_in": 1801,
+    "total_icu": 95,
     "total_resp": 19,
-    "in": 105,
+    "in": 104,
     "out": 76,
-    "delta": 29,
+    "delta": 28,
     "deceased": 10,
-    "infected": 502,
-    "tests": 2659
+    "infected": 503,
+    "tests": 2660
   },
   "2023-03-06": {
-    "total_in": 1913,
-    "total_icu": 97,
+    "total_in": 1939,
+    "total_icu": 99,
     "total_resp": 24,
-    "in": 145,
+    "in": 147,
     "out": 100,
-    "delta": 45,
-    "deceased": 6,
-    "infected": 3036,
+    "delta": 47,
+    "deceased": 7,
+    "infected": 3037,
     "tests": 8310
   },
   "2023-03-07": {
-    "total_in": 1946,
-    "total_icu": 95,
+    "total_in": 1970,
+    "total_icu": 96,
     "total_resp": 27,
-    "in": 201,
-    "out": 285,
-    "delta": -84,
+    "in": 202,
+    "out": 287,
+    "delta": -85,
     "deceased": 3,
-    "infected": 2219,
-    "tests": 8568
+    "infected": 2220,
+    "tests": 8570
   },
   "2023-03-08": {
-    "total_in": 2050,
-    "total_icu": 99,
+    "total_in": 2100,
+    "total_icu": 100,
     "total_resp": 24,
-    "in": 191,
-    "out": 244,
-    "delta": -53,
-    "deceased": 8,
+    "in": 196,
+    "out": 247,
+    "delta": -51,
+    "deceased": 10,
     "infected": 2007,
     "tests": 7438
   },
   "2023-03-09": {
-    "total_in": 2062,
-    "total_icu": 106,
+    "total_in": 2117,
+    "total_icu": 108,
     "total_resp": 26,
-    "in": 142,
-    "out": 245,
-    "delta": -103,
-    "deceased": 13,
+    "in": 144,
+    "out": 254,
+    "delta": -110,
+    "deceased": 14,
     "infected": 2006,
-    "tests": 7446
+    "tests": 7448
   },
   "2023-03-10": {
-    "total_in": 2088,
-    "total_icu": 116,
+    "total_in": 2131,
+    "total_icu": 117,
     "total_resp": 30,
-    "in": 168,
-    "out": 275,
-    "delta": -107,
-    "deceased": 7,
-    "infected": 1845,
-    "tests": 7241
+    "in": 170,
+    "out": 288,
+    "delta": -118,
+    "deceased": 8,
+    "infected": 1846,
+    "tests": 7242
   },
   "2023-03-11": {
-    "total_in": 2137,
-    "total_icu": 119,
+    "total_in": 2178,
+    "total_icu": 121,
     "total_resp": 28,
-    "in": 201,
-    "out": 252,
-    "delta": -51,
-    "deceased": 4,
-    "infected": 668,
-    "tests": 3749
+    "in": 202,
+    "out": 261,
+    "delta": -59,
+    "deceased": 6,
+    "infected": 670,
+    "tests": 3751
   },
   "2023-03-12": {
-    "total_in": 2193,
-    "total_icu": 118,
+    "total_in": 2229,
+    "total_icu": 120,
     "total_resp": 31,
     "in": 119,
-    "out": 95,
-    "delta": 24,
-    "deceased": 11,
-    "infected": 464,
-    "tests": 2637
+    "out": 99,
+    "delta": 20,
+    "deceased": 13,
+    "infected": 466,
+    "tests": 2638
   },
   "2023-03-13": {
-    "total_in": 2308,
-    "total_icu": 125,
+    "total_in": 2346,
+    "total_icu": 127,
     "total_resp": 30,
-    "in": 135,
-    "out": 156,
-    "delta": -21,
-    "deceased": 9,
-    "infected": 2925,
-    "tests": 7955
+    "in": 136,
+    "out": 159,
+    "delta": -23,
+    "deceased": 13,
+    "infected": 2952,
+    "tests": 7961
   },
   "2023-03-14": {
-    "total_in": 2312,
-    "total_icu": 128,
+    "total_in": 2347,
+    "total_icu": 130,
     "total_resp": 36,
-    "in": 216,
-    "out": 335,
-    "delta": -119,
-    "deceased": 7,
-    "infected": 1521,
-    "tests": 8537
+    "in": 222,
+    "out": 347,
+    "delta": -125,
+    "deceased": 9,
+    "infected": 2125,
+    "tests": 8615
   },
   "2023-03-15": {
-    "total_in": 2303,
+    "total_in": 2329,
     "total_icu": 132,
-    "total_resp": 41,
+    "total_resp": 40,
+    "in": 182,
+    "out": 336,
+    "delta": -154,
+    "deceased": 7,
+    "infected": 1835,
+    "tests": 6911
+  },
+  "2023-03-16": {
+    "total_in": 2328,
+    "total_icu": 117,
+    "total_resp": 39,
+    "in": 176,
+    "out": 277,
+    "delta": -101,
+    "deceased": 14,
+    "infected": 1733,
+    "tests": 6813
+  },
+  "2023-03-17": {
+    "total_in": 2279,
+    "total_icu": 122,
+    "total_resp": 36,
+    "in": 152,
+    "out": 309,
+    "delta": -157,
+    "deceased": 14,
+    "infected": 1509,
+    "tests": 6308
+  },
+  "2023-03-18": {
+    "total_in": 2232,
+    "total_icu": 121,
+    "total_resp": 37,
     "in": 175,
-    "out": 306,
-    "delta": -131,
-    "deceased": 0,
-    "infected": 16,
-    "tests": 138
+    "out": 301,
+    "delta": -126,
+    "deceased": 14,
+    "infected": 663,
+    "tests": 3426
+  },
+  "2023-03-19": {
+    "total_in": 2320,
+    "total_icu": 129,
+    "total_resp": 37,
+    "in": 119,
+    "out": 104,
+    "delta": 15,
+    "deceased": 5,
+    "infected": 393,
+    "tests": 2342
+  },
+  "2023-03-20": {
+    "total_in": 2354,
+    "total_icu": 132,
+    "total_resp": 34,
+    "in": 109,
+    "out": 137,
+    "delta": -28,
+    "deceased": 11,
+    "infected": 2367,
+    "tests": 7189
+  },
+  "2023-03-21": {
+    "total_in": 2230,
+    "total_icu": 123,
+    "total_resp": 35,
+    "in": 146,
+    "out": 340,
+    "delta": -194,
+    "deceased": 14,
+    "infected": 1146,
+    "tests": 7341
+  },
+  "2023-03-22": {
+    "total_in": 2149,
+    "total_icu": 117,
+    "total_resp": 35,
+    "in": 118,
+    "out": 277,
+    "delta": -159,
+    "deceased": 1,
+    "infected": 12,
+    "tests": 134
   }
 }
