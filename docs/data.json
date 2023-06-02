@@ -5290,7 +5290,7 @@
     "tests": 8397
   },
   "2023-02-15": {
-    "deceased": 8,
+    "deceased": 7,
     "infected": 1508,
     "tests": 7375
   },
@@ -5326,13 +5326,13 @@
   },
   "2023-02-22": {
     "deceased": 6,
-    "infected": 1627,
+    "infected": 1628,
     "tests": 6937
   },
   "2023-02-23": {
     "deceased": 12,
     "infected": 1567,
-    "tests": 6913
+    "tests": 6914
   },
   "2023-02-24": {
     "deceased": 7,
@@ -5537,7 +5537,7 @@
   "2023-04-05": {
     "deceased": 3,
     "infected": 796,
-    "tests": 4103
+    "tests": 4104
   },
   "2023-04-06": {
     "deceased": 18,
@@ -5652,7 +5652,7 @@
   "2023-04-28": {
     "deceased": 2,
     "infected": 301,
-    "tests": 2875
+    "tests": 2876
   },
   "2023-04-29": {
     "deceased": 5,
@@ -5732,7 +5732,7 @@
   "2023-05-14": {
     "deceased": 3,
     "infected": 72,
-    "tests": 1071
+    "tests": 1072
   },
   "2023-05-15": {
     "deceased": 2,
@@ -5755,29 +5755,54 @@
     "tests": 1060
   },
   "2023-05-19": {
-    "deceased": 3,
+    "deceased": 4,
     "infected": 133,
-    "tests": 2171
+    "tests": 2173
   },
   "2023-05-20": {
-    "deceased": 2,
-    "infected": 83,
+    "deceased": 3,
+    "infected": 84,
     "tests": 1257
   },
   "2023-05-21": {
     "deceased": 4,
     "infected": 57,
-    "tests": 1039
+    "tests": 1040
   },
   "2023-05-22": {
     "deceased": 2,
-    "infected": 227,
-    "tests": 2311
+    "infected": 230,
+    "tests": 2320
   },
-  "2023-05-24": {
+  "2023-05-23": {
+    "deceased": 4,
+    "infected": 131,
+    "tests": 2269
+  },
+  "2023-05-25": {
+    "deceased": 1,
+    "infected": 111,
+    "tests": 1804
+  },
+  "2023-05-26": {
+    "deceased": 3,
+    "infected": 103,
+    "tests": 1692
+  },
+  "2023-05-27": {
+    "deceased": 1,
+    "infected": 71,
+    "tests": 1019
+  },
+  "2023-05-29": {
+    "deceased": 4,
+    "infected": 46,
+    "tests": 818
+  },
+  "2023-05-31": {
     "deceased": 0,
-    "infected": 1,
-    "tests": 58
+    "infected": 2,
+    "tests": 62
   },
   "2020-07-10": {
     "infected": 127,
@@ -5815,8 +5840,16 @@
     "infected": 260,
     "tests": 3376
   },
-  "2023-05-23": {
-    "infected": 82,
-    "tests": 2247
+  "2023-05-24": {
+    "infected": 132,
+    "tests": 1921
+  },
+  "2023-05-28": {
+    "infected": 46,
+    "tests": 818
+  },
+  "2023-05-30": {
+    "infected": 91,
+    "tests": 1771
   }
 }
