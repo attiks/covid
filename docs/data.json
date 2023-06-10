@@ -5631,8 +5631,8 @@
   },
   "2023-04-24": {
     "deceased": 5,
-    "infected": 593,
-    "tests": 3653
+    "infected": 594,
+    "tests": 3657
   },
   "2023-04-25": {
     "deceased": 4,
@@ -5672,7 +5672,7 @@
   "2023-05-02": {
     "deceased": 5,
     "infected": 414,
-    "tests": 3143
+    "tests": 3144
   },
   "2023-05-03": {
     "deceased": 5,
@@ -5681,8 +5681,8 @@
   },
   "2023-05-04": {
     "deceased": 4,
-    "infected": 262,
-    "tests": 2577
+    "infected": 263,
+    "tests": 2578
   },
   "2023-05-05": {
     "deceased": 3,
@@ -5732,27 +5732,27 @@
   "2023-05-14": {
     "deceased": 3,
     "infected": 72,
-    "tests": 1072
+    "tests": 1073
   },
   "2023-05-15": {
     "deceased": 2,
-    "infected": 223,
+    "infected": 228,
     "tests": 2718
   },
   "2023-05-16": {
     "deceased": 5,
     "infected": 197,
-    "tests": 2535
+    "tests": 2597
   },
   "2023-05-17": {
     "deceased": 3,
     "infected": 174,
-    "tests": 2367
+    "tests": 2369
   },
   "2023-05-18": {
     "deceased": 5,
     "infected": 56,
-    "tests": 1060
+    "tests": 1061
   },
   "2023-05-19": {
     "deceased": 4,
@@ -5781,28 +5781,63 @@
   },
   "2023-05-25": {
     "deceased": 1,
-    "infected": 111,
-    "tests": 1804
+    "infected": 113,
+    "tests": 1806
   },
   "2023-05-26": {
     "deceased": 3,
     "infected": 103,
-    "tests": 1692
+    "tests": 1693
   },
   "2023-05-27": {
     "deceased": 1,
-    "infected": 71,
+    "infected": 72,
     "tests": 1019
+  },
+  "2023-05-28": {
+    "deceased": 1,
+    "infected": 46,
+    "tests": 819
   },
   "2023-05-29": {
     "deceased": 4,
-    "infected": 46,
-    "tests": 818
+    "infected": 47,
+    "tests": 819
   },
-  "2023-05-31": {
+  "2023-05-30": {
+    "deceased": 1,
+    "infected": 119,
+    "tests": 1781
+  },
+  "2023-06-01": {
+    "deceased": 1,
+    "infected": 77,
+    "tests": 1458
+  },
+  "2023-06-02": {
+    "deceased": 2,
+    "infected": 78,
+    "tests": 1440
+  },
+  "2023-06-03": {
+    "deceased": 2,
+    "infected": 49,
+    "tests": 820
+  },
+  "2023-06-04": {
+    "deceased": 2,
+    "infected": 36,
+    "tests": 633
+  },
+  "2023-06-05": {
+    "deceased": 1,
+    "infected": 126,
+    "tests": 1506
+  },
+  "2023-06-07": {
     "deceased": 0,
-    "infected": 2,
-    "tests": 62
+    "infected": 1,
+    "tests": 45
   },
   "2020-07-10": {
     "infected": 127,
@@ -5841,15 +5876,15 @@
     "tests": 3376
   },
   "2023-05-24": {
-    "infected": 132,
+    "infected": 136,
     "tests": 1921
   },
-  "2023-05-28": {
-    "infected": 46,
-    "tests": 818
+  "2023-05-31": {
+    "infected": 95,
+    "tests": 1668
   },
-  "2023-05-30": {
-    "infected": 91,
-    "tests": 1771
+  "2023-06-06": {
+    "infected": 47,
+    "tests": 1425
   }
 }
